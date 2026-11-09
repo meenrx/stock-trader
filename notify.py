@@ -192,8 +192,10 @@ HELP = """<b>บอทหุ้นเด่น</b> — แจ้งจุดซ�
 /port — หุ้นที่ถือ กำไร/ขาดทุน และ Stop
 /signals — หุ้นที่มีสัญญาณซื้อล่าสุด
 /stock PTT — สรุปหุ้นรายตัว
+/news — ข่าวหุ้นล่าสุด · /news GULF — ข่าวของหุ้นตัวนั้น
 /capital 200000 — ตั้งเงินทุนสำหรับคำนวณจำนวนหุ้น
 
+บอทจะส่งข่าวใหม่ของหุ้นที่คุณถือให้อัตโนมัติ
 บอทตอบกลับภายใน ~30 นาทีช่วงตลาดเปิด (นอกเวลาตลาดภายใน ~3 ชั่วโมง)"""
 
 
@@ -208,12 +210,17 @@ def cmd_buy(st, args):
         return f"ไม่พบข้อมูลหุ้น {E(short(t))}"
     shares = int(float(args[1].replace(",", ""))) if len(args) > 1 else None
     price = float(args[2].replace(",", "")) if len(args) > 2 else lp["close"]
+    from strategy import to_tick
     stop = round(price - C.ATR_STOP_MULT * lp["atr"], 2)
+    if is_th(t):
+        stop = to_tick(stop, "down")          # ราคาที่ตั้งใน Streaming ได้จริง
     if not shares:
         shares = size(price, stop, t, st["capital"])
     if shares <= 0:
         return "จำนวนหุ้นตามแผนไม่ถึง 1 lot — ระบุจำนวนเอง เช่น /buy GULF 100"
     target = round(price + C.TARGET_R * (price - stop), 2)
+    if is_th(t):
+        target = to_tick(target, "down")
     st["holdings"][t] = {"shares": shares, "entry": price, "stop": stop, "risk": price - stop,
                          "high": price, "date": now().date().isoformat(), "fx": fx(t)}
     st["history"].append({"d": now().isoformat(timespec="minutes"), "side": "BUY", "t": t,
@@ -288,9 +295,13 @@ def signals_text(st, mkt="set", limit=10):
         for r in buys[:limit]:
             p = r["plan"]
             sh = size(p["entry"], p["stop"], r["symbol"], st["capital"], reg.get("strong", True))
-            lines.append(f"<b>{E(r['ticker'])}</b> {money(p['entry'])} · คะแนน {r['score']:.0f}\n"
+            lines.append(f"<b>{E(r['ticker'])}</b> {money(p['entry'])} · คะแนน {r['score']:.0f}"
+                         f" · ซื้อขาย {r.get('value20_m', 0):,.0f} ล้าน/วัน\n"
                          f"    🛑 {money(p['stop'])} ({p['stop_pct']}%) 🎯 {money(p['target'])} (+{p['target_pct']}%)"
                          f" · {sh:,} หุ้น\n    {E(' · '.join(r['signals']))}")
+            nw = next((n for n in news_items() if r["ticker"] in n["sym"]), None)
+            if nw:
+                lines.append("    " + news_line(nw))
     else:
         lines.append("\nวันนี้ไม่มีหุ้นผ่านทุกเงื่อนไข — ไม่ซื้อก็ไม่เป็นไร")
     if watch:
@@ -318,6 +329,59 @@ def stock_text(args):
             f"RSI {i['RSI']:.0f} · ADX {i['ADX']:.0f} · 6 เดือน {r['roc126']:+.1f}%\n"
             f"🛑 Stop {money(p['stop'])} · 🎯 เป้า {money(p['target'])}"
             + (f"\n🔗 {SITE_URL}#stock/{t}" if SITE_URL else ""))
+
+
+def news_items():
+    d = site_json("news.json")
+    return d.get("items", []) if d else []
+
+
+def news_line(n):
+    dot = "🟢" if n.get("sen", 0) > 0 else "🔴" if n.get("sen", 0) < 0 else "▫️"
+    return f'{dot} <a href="{E(n["l"])}">{E(n["t"])}</a> <i>({E(n["s"])})</i>'
+
+
+def news_text(args):
+    items = news_items()
+    if not items:
+        return "ยังไม่มีข้อมูลข่าว"
+    if args:
+        sym = short(norm(args[0]))
+        sel = [n for n in items if sym in n["sym"]][:10]
+        head = f"📰 <b>ข่าว {E(sym)}</b> (7 วันล่าสุด)"
+        if not sel:
+            return head + "\nยังไม่พบข่าว"
+    else:
+        sel = [n for n in items if n["sym"]][:12]
+        head = "📰 <b>ข่าวหุ้นล่าสุด</b>"
+    return head + "\n\n" + "\n\n".join(news_line(n) for n in sel)
+
+
+def holding_news(st, hours=8, limit=6):
+    """ข่าวใหม่ของหุ้นที่ถือ (ยังไม่เคยส่ง)"""
+    held = {short(t) for t in st["holdings"]}
+    if not held:
+        return []
+    cutoff = (now() - timedelta(hours=hours)).isoformat()
+    out = []
+    for n in news_items():
+        hit = [x for x in n["sym"] if x in held]
+        key = f"news:{n['id']}"
+        if hit and n["d"] >= cutoff and key not in st["sent"]:
+            st["sent"][key] = now().date().isoformat()
+            out.append(f"<b>{', '.join(hit)}</b> · " + news_line(n))
+            if len(out) >= limit:
+                break
+    return out
+
+
+def refresh_news(st):
+    """ดึงข่าวรอบสั้น (ระหว่างวัน) รวมข่าวเจาะหุ้นที่ถือ"""
+    try:
+        import news
+        news.main(quick=True, extra=[short(t) for t in st["holdings"]])
+    except Exception as e:
+        print("ดึงข่าวไม่สำเร็จ:", e)
 
 
 def process_commands(st):
@@ -349,7 +413,9 @@ def process_commands(st):
             elif cmd == "/port":
                 reply = port_text(st)
             elif cmd == "/signals":
-                reply = signals_text(st, "set") + "\n\n" + signals_text(st, "us", 5)
+                reply = signals_text(st, "set", 25)
+            elif cmd == "/news":
+                reply = news_text(args)
             elif cmd == "/stock":
                 reply = stock_text(args)
             elif cmd == "/capital" and args:
@@ -398,6 +464,9 @@ def check_holdings(st, markets, daily=False):
         if daily:                                   # เลื่อน trailing stop ด้วยราคาปิด
             h["high"] = max(h["high"], p["close"])
             new_stop = round(max(h["stop"], h["high"] - C.ATR_TRAIL_MULT * p["atr"]), 2)
+            if is_th(t):
+                from strategy import to_tick
+                new_stop = max(h["stop"], to_tick(new_stop, "down"))
             if new_stop > h["stop"] + 1e-9:
                 alerts.append(f"⬆️ {short(t)} เลื่อน Stop {money(h['stop'])} → <b>{money(new_stop)}</b> (แก้ในแอป KS ด้วย)")
                 h["stop"] = new_stop
@@ -429,7 +498,8 @@ def check_watch(st, markets):
         if not p or p["date"] != today:
             continue
         if p["close"] > w["level"] and st["sent"].get(f"bo:{t}") != today:
-            stop = p["close"] - w["stop_atr"]
+            from strategy import to_tick
+            stop = to_tick(p["close"] - w["stop_atr"], "down") if is_th(t) else p["close"] - w["stop_atr"]
             out.append(f"🚀 <b>{short(t)} ทะลุจุดซื้อ {money(w['level'])}</b> (ล่าสุด {money(p['close'])}, "
                        f"วอลุ่ม {p['vol_ratio']:.1f} เท่าของเฉลี่ย)\n"
                        f"    ถ้ายืนได้ถึงปิดตลาดและวอลุ่มหนุน = จุดซื้อ · Stop ~{money(stop)}")
@@ -440,6 +510,8 @@ def check_watch(st, markets):
 # ------------------------------------------------------------ โหมดทำงาน
 def run(mode):
     st = load_state()
+    if mode in ("intraday", "commands"):
+        refresh_news(st)
     process_commands(st)
     if mode in ("daily-set", "daily-us"):
         mkt = mode.split("-")[1]
@@ -451,12 +523,22 @@ def run(mode):
             msg += "\n\n" + port_text({"holdings": held}, prices)
         if alerts:
             msg = "\n".join(alerts) + "\n\n" + msg
+        hn = holding_news(st, hours=24)
+        if hn:
+            msg += "\n\n📰 <b>ข่าวหุ้นที่ถือ</b>\n" + "\n".join(hn)
         send(f"🗓 <b>สรุปหลังตลาดปิด {now():%d/%m/%Y}</b>\n\n" + msg)
+    elif mode == "commands":
+        hn = holding_news(st)
+        if hn:
+            send("📰 <b>ข่าวใหม่ของหุ้นที่ถือ</b>\n" + "\n".join(hn))
     elif mode == "intraday":
-        markets = [m for m in ("set", "us") if market_open(m)]
+        markets = ["set"] if market_open("set") else []
         if markets:
             alerts, _ = check_holdings(st, markets)
             alerts += check_watch(st, markets)
+            hn = holding_news(st)
+            if hn:
+                alerts.append("📰 <b>ข่าวใหม่ของหุ้นที่ถือ</b>\n" + "\n".join(hn))
             if alerts:
                 send("⏰ <b>แจ้งเตือนระหว่างวัน</b>\n\n" + "\n\n".join(alerts))
     save_state(st)

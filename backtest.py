@@ -7,7 +7,7 @@ import config as C
 
 def run_backtest(frames, bench=None, start=None, capital=C.CAPITAL,
                  max_pos=C.MAX_POSITIONS, max_pos_pct=C.MAX_POSITION_PCT,
-                 risk=C.RISK_PER_TRADE, use_regime=True):
+                 risk=C.RISK_PER_TRADE, use_regime=True, min_value=0, max_atr_pct=None):
     tick = list(frames)
     idx = sorted(set().union(*[f.index for f in frames.values()]))
     idx = pd.DatetimeIndex(idx)
@@ -24,6 +24,11 @@ def run_backtest(frames, bench=None, start=None, capital=C.CAPITAL,
     ENT = panel("entry").fillna(False).astype(bool)
     EXT = panel("exit_trend").fillna(False).astype(bool)
     RNK = panel("ROC126")
+    if min_value:          # ซื้อเฉพาะวันที่หุ้นมีสภาพคล่องพอ ณ เวลานั้น (ไม่ใช้ข้อมูลอนาคต)
+        ENT = ENT & (panel("Value20") >= min_value).fillna(False)
+    if max_atr_pct:        # ตัดหุ้นที่เหวี่ยงแรงเกินไป (มักเปิดกระโดดทะลุ Stop)
+        ENT = ENT & (panel("ATR_pct") <= max_atr_pct).fillna(False)
+    ENT_np, RNK_np = ENT.values, np.nan_to_num(RNK.values, nan=-9)
     if use_regime and bench is not None:
         reg = (bench["Close"] > bench["SMA200"]).reindex(idx).ffill().fillna(True)
     else:
@@ -45,7 +50,7 @@ def run_backtest(frames, bench=None, start=None, capital=C.CAPITAL,
                        "R": round((price - p["px"]) / p["r"], 2), "days": (d - p["d"]).days,
                        "reason": why})
 
-    for d in idx:
+    for di, d in enumerate(idx):
         # 1) ขายตามสัญญาณเมื่อวาน ที่ราคาเปิด
         for t in list(pend_sell):
             if t in pos and not np.isnan(O.at[d, t]):
@@ -83,8 +88,9 @@ def run_backtest(frames, bench=None, start=None, capital=C.CAPITAL,
                 pend_sell.add(t)
         free = max_pos - len(pos) + len(pend_sell)
         if reg.at[d] and free > 0:
-            cands = [t for t in tick if ENT.at[d, t] and t not in pos]
-            cands.sort(key=lambda t: -(RNK.at[d, t] if not np.isnan(RNK.at[d, t]) else -9))
+            hits = np.nonzero(ENT_np[di])[0]
+            hits = hits[np.argsort(-RNK_np[di, hits])]
+            cands = [tick[k] for k in hits if tick[k] not in pos]
             pend_buy = [(t, ATR.at[d, t]) for t in cands[:free]]
         # 5) มูลค่าพอร์ต
         eq_curve.append(cash + sum(p["sh"] * Cm.at[d, t] for t, p in pos.items()))

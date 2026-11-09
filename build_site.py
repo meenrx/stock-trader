@@ -45,7 +45,8 @@ def build_market(lst, years=10):
     n = 0
     for row in scan["rows"]:
         t = row["symbol"]
-        if t not in frames:
+        # หน้ารายตัวเฉพาะหุ้นที่มีการซื้อขายพอสมควร (≥ 1 ล้านบาท/วัน) หรือมีสถานะน่าสนใจ
+        if t not in frames or (row["value20_m"] < 1 and row["status"] == "หลีกเลี่ยง"):
             continue
         d = S.stock_detail(t, row, frames[t], regime, long_frames.get(t))
         dump(os.path.join(DATA, "stocks", f"s_{t}.json"), d)
@@ -71,13 +72,17 @@ def copy_static():
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--list", choices=["set", "us", "all"], default="all")
+    ap.add_argument("--list", choices=["set", "us", "all"], default="set")
+    ap.add_argument("--no-news", action="store_true")
     args = ap.parse_args()
     copy_static()
     lists = ["set", "us"] if args.list == "all" else [args.list]
     fx = None
     for lst in lists:
         fx = build_market(lst)
+    if not args.no_news:
+        import news
+        news.main()
     meta_path = os.path.join(DATA, "meta.json")
     meta = {}
     if os.path.exists(meta_path):
@@ -85,7 +90,9 @@ def main():
             meta = json.load(f)
     meta.update({"time": datetime.now().isoformat(timespec="minutes"), "fx_usd_thb": fx,
                  "defaults": {k: getattr(C, k) for k in C.SETTING_KEYS},
-                 "lists": {k: C.WATCHLISTS[k] for k in ("set", "us")},
+                 "lists": {"set": C.WATCHLISTS["set"], "us": []}, "names": C.TH_NAMES,
+                 "stock_pages": sorted(f[2:-5] for f in os.listdir(os.path.join(DATA, "stocks"))
+                                       if f.startswith("s_") and f.endswith(".BK.json")),
                  "lot_th": C.LOT_SIZE_TH, "stop_mult": C.ATR_STOP_MULT,
                  "trail_mult": C.ATR_TRAIL_MULT, "target_r": C.TARGET_R,
                  "cost": C.COMMISSION + C.SLIPPAGE,

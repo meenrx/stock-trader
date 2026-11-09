@@ -133,6 +133,29 @@ def technical_score(df, rs_rank=None):
 
 
 # ---------------------------------------------------------------- แผนเทรด
+def tick_size(p):
+    """ช่วงราคา (tick) ของตลาดหลักทรัพย์ฯ — ราคาที่ส่งคำสั่งใน Streaming ได้จริง"""
+    for lim, t in ((2, 0.01), (5, 0.02), (10, 0.05), (25, 0.10), (100, 0.25), (200, 0.50), (400, 1.00)):
+        if p < lim:
+            return t
+    return 2.00
+
+
+def to_tick(p, mode="nearest"):
+    """ปัดราคาให้ตรงช่วงราคา: down = ปัดลง (Stop), up = ปัดขึ้น, nearest = ใกล้สุด"""
+    import math
+    if p is None or p != p or p <= 0:
+        return p
+    t = tick_size(p)
+    n = p / t
+    n = math.floor(n + 1e-9) if mode == "down" else math.ceil(n - 1e-9) if mode == "up" else round(n)
+    v = round(n * t, 2)
+    if tick_size(v) != t:            # ข้ามช่วงราคาแล้ว ปัดใหม่ด้วย tick ของช่วงใหม่
+        t2 = tick_size(v)
+        v = round(round(v / t2) * t2, 2)
+    return v
+
+
 def trade_plan(df, capital=C.CAPITAL, is_th=True, fx=1.0):
     """capital เป็นเงินบาท; fx = บาทต่อ 1 หน่วยสกุลเงินของหุ้น (หุ้นไทย = 1)"""
     capital = capital / fx
@@ -140,8 +163,10 @@ def trade_plan(df, capital=C.CAPITAL, is_th=True, fx=1.0):
     entry = float(r["Close"])
     atr = float(r["ATR"])
     stop = entry - C.ATR_STOP_MULT * atr
+    target = entry + C.TARGET_R * (entry - stop)
+    if is_th:                                   # ราคาที่ส่งคำสั่งใน Streaming ได้จริง
+        entry, stop, target = to_tick(entry), to_tick(stop, "down"), to_tick(target, "down")
     risk_ps = entry - stop
-    target = entry + C.TARGET_R * risk_ps
     shares = min(capital * C.RISK_PER_TRADE / risk_ps, capital * C.MAX_POSITION_PCT / entry)
     lot = C.LOT_SIZE_TH if is_th else 1
     shares = int(shares // lot * lot)
@@ -152,9 +177,10 @@ def trade_plan(df, capital=C.CAPITAL, is_th=True, fx=1.0):
         "shares": shares, "cost": round(shares * entry, 0),
         "max_loss": round(shares * risk_ps * fx, 0), "cost_thb": round(shares * entry * fx, 0),
         "ccy": "฿" if is_th else "$", "fx": round(fx, 3),
-        "breakout_level": round(float(r["HH55"]), 2) if pd.notna(r["HH55"]) else None,
-        "pullback_zone": (round(float(min(r["EMA20"], r["SMA50"])), 2),
-                          round(float(max(r["EMA20"], r["SMA50"])), 2)),
+        "breakout_level": (to_tick(float(r["HH55"]), "up") if is_th else round(float(r["HH55"]), 2))
+        if pd.notna(r["HH55"]) else None,
+        "pullback_zone": tuple((to_tick(float(x)) if is_th else round(float(x), 2))
+                               for x in sorted((r["EMA20"], r["SMA50"]))),
     }
 
 

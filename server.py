@@ -125,6 +125,11 @@ def api_analyze():
     return ok(S.job(f"analyze:{t}", S.analyze_data, t))
 
 
+@app.get("/api/news")
+def api_news():
+    return ok(S.job("news", S.news_data, force=request.args.get("refresh") == "1"))
+
+
 @app.get("/api/backtest")
 def api_backtest():
     lst = request.args.get("list", "set")

@@ -7,7 +7,7 @@ from indicators import add_indicators
 from strategy import (add_signals, fundamental_score, market_regime, signal_names,
                       technical_score, trade_plan)
 
-MIN_VALUE_TH = 20e6    # มูลค่าซื้อขายเฉลี่ยขั้นต่ำ 20 ล้านบาท/วัน (กันหุ้นสภาพคล่องต่ำ)
+MIN_VALUE_TH = 5e6     # มูลค่าซื้อขายเฉลี่ยขั้นต่ำ 5 ล้านบาท/วัน (ซื้อขายได้จริงโดยราคาไม่หลุดมาก)
 MIN_VALUE_US = 50e6
 
 
@@ -44,7 +44,9 @@ def scan(tickers, use_fund=True, refresh=False, capital=C.CAPITAL):
     frames, bench = prepare(tickers, refresh=refresh)
     regimes = {b: market_regime(df) for b, df in bench.items()}
     ranks = rs_ranks(frames)
-    funds = get_fundamentals(list(frames), refresh) if use_fund else {}
+    liquid_set = [t for t, df in frames.items()
+                  if df["Value20"].iloc[-1] >= (MIN_VALUE_TH if t.endswith(".BK") else MIN_VALUE_US)]
+    funds = get_fundamentals(liquid_set, refresh) if use_fund else {}   # ดึงงบเฉพาะหุ้นที่ซื้อขายคล่อง
 
     fx_us = usd_thb() if any(not t.endswith(".BK") for t in frames) else 1.0
     rows = []
@@ -55,7 +57,7 @@ def scan(tickers, use_fund=True, refresh=False, capital=C.CAPITAL):
         reg = regimes.get(bench_for(t), {"ok": True, "strong": True})
         tech, tdet = technical_score(df, ranks.get(t))
         info = funds.get(t, {})
-        fund, fdet = fundamental_score(info) if use_fund else (12.5, {})
+        fund, fdet = fundamental_score(info) if use_fund and liquid else (12.5, {"note": "สภาพคล่องต่ำ — ไม่ได้ดึงงบการเงิน"} if use_fund else {})
         score = round(tech + fund, 1)
         sigs = signal_names(df)
         size_cap = capital if reg.get("strong") else capital * 0.5
@@ -87,7 +89,7 @@ def scan(tickers, use_fund=True, refresh=False, capital=C.CAPITAL):
         tgt = info.get("targetMeanPrice")
         upside = round((tgt / r["Close"] - 1) * 100, 1) if tgt else None
         rows.append({
-            "ticker": t.replace(".BK", ""), "symbol": t, "name": (info.get("shortName") or "").split("_", 1)[-1].strip(),
+            "ticker": t.replace(".BK", ""), "symbol": t, "name": (info.get("shortName") or "").split("_", 1)[-1].strip() or C.TH_NAMES.get(t, ""),
             "sector": info.get("sector") or "", "status": status, "score": score,
             "tech": tech, "fund": fund, "signals": sigs, "how": how,
             "close": round(float(r["Close"]), 2), "rsi": round(float(r["RSI"]), 1),
@@ -96,7 +98,7 @@ def scan(tickers, use_fund=True, refresh=False, capital=C.CAPITAL):
             "value20_m": round(float(r["Value20"]) / 1e6, 1),
             "analyst_upside": upside, "analyst_rec": info.get("recommendationKey"),
             "tech_detail": tdet, "fund_detail": fdet, "plan": plan,
-            "spark": [round(float(x), 2) for x in df["Close"].tail(120)],
+            "liquid": bool(liquid), "spark": [round(float(x), 2) for x in df["Close"].tail(60)],
         })
     order = {"ซื้อ": 0, "รอจังหวะ": 1, "หลีกเลี่ยง": 2}
     rows.sort(key=lambda x: (order[x["status"]], -x["score"]))

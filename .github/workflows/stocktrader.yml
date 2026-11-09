@@ -1,26 +1,22 @@
-# ระบบอัตโนมัติ: อัปเดตเว็บทุกวันหลังตลาดปิด + บอท Telegram แจ้งจุดซื้อ/ขาย
+# ระบบอัตโนมัติ (หุ้นไทย): อัปเดตเว็บทุกวันหลังตลาดปิด + รวบรวมข่าว + บอท Telegram แจ้งจุดซื้อ/ขาย
 # เวลาใน cron เป็นเวลา UTC (ไทย = UTC+7) — GitHub อาจเริ่มช้ากว่ากำหนด 5-20 นาที
 name: stocktrader
 
 on:
   schedule:
-    - cron: "*/30 3-9 * * 1-5"    # ระหว่างวันตลาดไทย 10:00-16:59 น.
-    - cron: "*/30 14-20 * * 1-5"  # ระหว่างวันตลาดอเมริกา 21:00-03:59 น.
-    - cron: "45 10 * * 1-5"       # สรุปหุ้นไทย 17:45 น.
-    - cron: "30 21 * * 1-5"       # สรุปหุ้นอเมริกา 04:30 น.
-    - cron: "15 */3 * * *"        # รับคำสั่งบอทนอกเวลาตลาด
+    - cron: "*/30 3-9 * * 1-5"    # ระหว่างวัน 10:00-16:59 น.: เตือน Stop/จุดซื้อ + ข่าว
+    - cron: "45 10 * * 1-5"       # สรุปหลังตลาดปิด 17:45 น. + สร้างเว็บใหม่ทั้งหมด
+    - cron: "15 */3 * * *"        # นอกเวลา: รับคำสั่งบอท + อัปเดตข่าว
   workflow_dispatch:
     inputs:
       mode:
         description: "งานที่จะรัน"
         type: choice
         default: daily-set
-        options: [daily-set, daily-us, intraday, commands]
+        options: [daily-set, intraday, commands]
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
 
 concurrency:
   group: stocktrader
@@ -29,13 +25,18 @@ concurrency:
 jobs:
   run:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
     env:
       TZ: Asia/Bangkok
-    outputs:
-      build: ${{ steps.mode.outputs.build }}
     steps:
       - uses: actions/checkout@v4
+
+      - name: Load published site
+        uses: actions/checkout@v4
+        continue-on-error: true
+        with:
+          ref: gh-pages
+          path: site
 
       - id: mode
         run: |
@@ -43,14 +44,12 @@ jobs:
           M="${{ inputs.mode }}"
           case "$S" in
             "45 10 * * 1-5") M=daily-set ;;
-            "30 21 * * 1-5") M=daily-us ;;
             "15 */3 * * *")  M=commands ;;
             "")              ;;
             *)               M=intraday ;;
           esac
           [ -z "$M" ] && M=commands
           echo "mode=$M" >> "$GITHUB_OUTPUT"
-          case "$M" in daily-*) echo "build=1" >> "$GITHUB_OUTPUT" ;; esac
           echo "mode: $M"
 
       - uses: actions/setup-python@v5
@@ -60,13 +59,20 @@ jobs:
 
       - run: pip install -r requirements.txt
 
+      - name: Update stock list (Mondays)
+        if: steps.mode.outputs.mode == 'daily-set' && (github.event_name == 'workflow_dispatch' || startsWith(github.event.schedule, '45'))
+        run: |
+          if [ "$(date +%u)" = "1" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            python update_symbols.py || echo "update failed — keep old list"
+          fi
+
       - name: Build website
-        if: steps.mode.outputs.build == '1'
+        if: steps.mode.outputs.mode == 'daily-set'
         env:
           TELEGRAM_BOT_USERNAME: ${{ vars.TELEGRAM_BOT_USERNAME }}
         run: python build_site.py
 
-      - name: Telegram
+      - name: Telegram + news
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
@@ -74,28 +80,26 @@ jobs:
           SITE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
         run: python notify.py ${{ steps.mode.outputs.mode }}
 
-      - name: Save bot state
+      - name: Save bot state + stock list
         run: |
           git config user.name "stocktrader-bot"
           git config user.email "stocktrader-bot@users.noreply.github.com"
-          git add state/
+          git add state/ th_stocks.json
           if ! git diff --cached --quiet; then
             git commit -m "update bot state" -q
             git pull --rebase -q && git push -q
           fi
 
-      - uses: actions/upload-pages-artifact@v3
-        if: steps.mode.outputs.build == '1'
-        with:
-          path: site
-
-  deploy:
-    needs: run
-    if: needs.run.outputs.build == '1'
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
-    steps:
-      - id: deploy
-        uses: actions/deploy-pages@v4
+      - name: Publish website (gh-pages)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          [ -f site/index.html ] || { echo "no site yet"; exit 0; }
+          cd site
+          rm -rf .git
+          git init -q -b gh-pages
+          git config user.name "stocktrader-bot"
+          git config user.email "stocktrader-bot@users.noreply.github.com"
+          git add -A
+          git commit -q -m "publish site $(date '+%Y-%m-%d %H:%M')"
+          git push -q -f "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" gh-pages

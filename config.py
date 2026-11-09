@@ -45,8 +45,25 @@ def th(symbols):
     return [s if s.endswith(".BK") else f"{s}.BK" for s in symbols]
 
 
+def _all_th():
+    """หุ้นไทยทั้งตลาด (SET + mai) จาก th_stocks.json — ไม่มีไฟล์ก็ใช้รายชื่อหุ้นใหญ่ด้านบน"""
+    import json
+    import os
+    p = os.path.join(os.path.dirname(os.path.abspath(__file__)), "th_stocks.json")
+    try:
+        with open(p, encoding="utf-8") as f:
+            rows = json.load(f)
+        names = {r["s"] + ".BK": r.get("n", "") for r in rows}
+        return list(names), names
+    except Exception:
+        return th(SET_STOCKS), {}
+
+
+TH_ALL, TH_NAMES = _all_th()
+
 WATCHLISTS = {
-    "set": th(SET_STOCKS),
+    "set": TH_ALL,
+    "set100": th(SET_STOCKS),
     "us": US_STOCKS,
 }
 WATCHLISTS["all"] = WATCHLISTS["set"] + WATCHLISTS["us"]

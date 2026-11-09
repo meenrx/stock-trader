@@ -86,14 +86,14 @@ def analyze_data(ticker):
 
 def backtest_data(lst="set", years=10):
     from backtest import run_backtest
-    from scanner import bench_for, prepare
+    from scanner import MIN_VALUE_TH, bench_for, prepare
     tickers = C.WATCHLISTS[lst]
     frames, bench = prepare(tickers, period=f"{years}y")
     b = bench.get(bench_for(tickers[0]))
     start = b.index[210] if b is not None and len(b) > 210 else None   # รอให้ SMA200 คำนวณได้
     eq, tr, m = run_backtest(frames, b, start=start, capital=C.CAPITAL,
                              max_pos=C.MAX_POSITIONS, max_pos_pct=C.MAX_POSITION_PCT,
-                             risk=C.RISK_PER_TRADE)
+                             risk=C.RISK_PER_TRADE, min_value=MIN_VALUE_TH if lst.startswith("set") else 0)
     return eq, tr, m, b
 
 
@@ -116,7 +116,18 @@ def backtest_json(lst="set", years=10):
 _pool = ThreadPoolExecutor(max_workers=3)
 _jobs = {}
 _lock = threading.Lock()
-TTL = {"scan": 6 * 3600, "analyze": 15 * 60, "backtest": 24 * 3600}
+TTL = {"scan": 6 * 3600, "analyze": 15 * 60, "backtest": 24 * 3600, "news": 30 * 60}
+
+
+def news_data():
+    import news
+    path = os.path.join(DATA, "news_local.json")
+    prev = news.load_previous(path)
+    items, stats = news.collect(news.focus_symbols(), previous=prev)
+    res = {"time": datetime.now().isoformat(timespec="minutes"), "items": items, "sources": stats}
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(res, f, ensure_ascii=False)
+    return res
 
 
 def _disk(key):
@@ -140,7 +151,7 @@ def job(key, fn, *args, force=False, **kw):
     with _lock:
         j = _jobs.get(key)
         if j is None:
-            saved = _load_disk(key) if kind in ("scan", "backtest") else None
+            saved = _load_disk(key) if kind in ("scan", "backtest", "news") else None
             j = {"state": "done" if saved else "none", "result": saved, "error": None,
                  "finished": os.path.getmtime(_disk(key)) if saved else 0}
             _jobs[key] = j
@@ -152,7 +163,7 @@ def job(key, fn, *args, force=False, **kw):
     def work():
         try:
             res = clean(fn(*args, **kw))
-            if kind in ("scan", "backtest"):
+            if kind in ("scan", "backtest", "news"):
                 with open(_disk(key), "w", encoding="utf-8") as f:
                     json.dump(res, f, ensure_ascii=False)
             j.update(state="done", result=res, finished=time.time())

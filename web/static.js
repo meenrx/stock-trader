@@ -142,14 +142,24 @@
         const lst = q.get("list") || "set";
         const d = await getJSON(`data/scan_${lst}.json`, fresh);
         const reg = Object.values(d.regimes || {})[0] || {};
-        for (const r of d.rows) await replan(r.plan, r.symbol, reg.strong);
+        for (const r of d.rows) {
+          await replan(r.plan, r.symbol, reg.strong);
+          r.how = r.how.replace(/ \(ทุนตามเกณฑ์.*\)$/, "") +
+            (r.plan.shares === 0 && r.status !== "หลีกเลี่ยง" ? " (ทุนตามเกณฑ์ความเสี่ยงไม่พอซื้อ 1 lot — เพิ่มทุนหรือข้าม)" : "");
+        }
         return done(d);
       }
       case "analyze": {
         const sym = await norm(q.get("t"));
         let d;
         try { d = await getJSON(`data/stocks/s_${sym}.json`); }
-        catch { return { state: "error", error: `ไม่มีข้อมูล ${sym.replace(".BK", "")} — เว็บนี้วิเคราะห์ได้เฉพาะหุ้นในรายชื่อที่ระบบติดตาม (ดูรายชื่อได้จากช่องค้นหา)` }; }
+        catch {
+          const m = await meta(), s = sym.replace(".BK", "");
+          const listed = (m.lists.set || []).includes(sym);
+          return { state: "error", error: listed
+            ? `${s} ซื้อขายน้อยกว่า 1 ล้านบาทต่อวัน ระบบจึงไม่ทำหน้าวิเคราะห์ (หุ้นสภาพคล่องต่ำ เสี่ยงซื้อแล้วขายไม่ออก ราคาเหวี่ยงแรง)`
+            : `ไม่พบหุ้น ${s} ในตลาดหลักทรัพย์ฯ — ตรวจชื่อย่ออีกครั้ง` };
+        }
         const s = await settings();
         await replan(d.row.plan, sym, d.regime?.strong);
         d.capital = s.CAPITAL; d.risk = s.RISK_PER_TRADE;
@@ -170,6 +180,8 @@
         const m = await meta();
         return { static: true, bot: m.bot, time: m.time, updated_set: m.updated_set, updated_us: m.updated_us };
       }
+      case "news":
+        return done(await getJSON("data/news.json", fresh));
       case "paper": return paperStatus();
       case "paper/buy": return paperBuy(body);
       case "paper/sell": return paperSell(body);

@@ -24,12 +24,13 @@
         <svg viewBox="0 0 24 24" width="20" height="20"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M20 11a8 8 0 1 0-2.3 5.7M20 4v7h-7"/></svg>
       </button>
     </header>
-    <div class="seg" id="scan-list">
+    <div class="seg srv-only" id="scan-list">
       <button data-v="set">หุ้นไทย</button><button data-v="us">หุ้นอเมริกา</button>
     </div>
     <div id="scan-status" class="status"></div>
     <div id="scan-regime"></div>
     <div class="chips" id="scan-filter"></div>
+    <input id="scan-q" class="qbox" type="search" placeholder="ค้นหาในรายการ: ชื่อย่อ หรือชื่อบริษัท" autocomplete="off">
     <div id="scan-rows" class="list"></div>
   </section>
 
@@ -55,6 +56,17 @@
     <div id="stock-body"></div>
   </section>
 
+  <!-- ข่าว -->
+  <section id="v-news" class="view">
+    <header class="top"><h1>ข่าวหุ้น</h1>
+      <button class="icon-btn" id="news-refresh" aria-label="โหลดข่าวล่าสุด"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M20 11a8 8 0 1 0-2.3 5.7M20 4v7h-7"/></svg></button>
+    </header>
+    <div id="news-status" class="status"></div>
+    <input id="news-q" class="qbox" type="search" placeholder="กรองข่าว: ชื่อย่อหุ้นหรือคำ เช่น GULF, ปันผล" autocomplete="off">
+    <div class="chips" id="news-filter"></div>
+    <div id="news-list"></div>
+  </section>
+
   <!-- พอร์ตจำลอง -->
   <section id="v-paper" class="view">
     <header class="top"><h1>พอร์ตจำลอง</h1>
@@ -69,7 +81,7 @@
   <section id="v-bt" class="view">
     <header class="top"><h1>ทดสอบย้อนหลัง</h1></header>
     <div class="row-ctl">
-      <div class="seg" id="bt-list"><button data-v="set">หุ้นไทย</button><button data-v="us">หุ้นอเมริกา</button></div>
+      <div class="seg srv-only" id="bt-list"><button data-v="set">หุ้นไทย</button><button data-v="us">หุ้นอเมริกา</button></div>
       <select id="bt-years" class="srv-only"><option value="5">5 ปี</option><option value="10" selected>10 ปี</option><option value="15">15 ปี</option></select>
     </div>
     <div id="bt-status" class="status"></div>
@@ -107,6 +119,7 @@
 <nav class="tabs" id="tabs">
   <a href="#scan" data-tab="scan"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></svg><span>หุ้นเด่น</span></a>
   <a href="#search" data-tab="search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><span>วิเคราะห์</span></a>
+  <a href="#news" data-tab="news"><svg viewBox="0 0 24 24"><path d="M4 5h13v14H6a2 2 0 0 1-2-2zM17 9h3v8a2 2 0 0 1-2 2M7 9h7M7 13h7M7 17h4"/></svg><span>ข่าว</span></a>
   <a href="#paper" data-tab="paper"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="14" rx="2"/><path d="M8 6V4h8v2M3 12h18"/></svg><span>พอร์ต</span></a>
   <a href="#bt" data-tab="bt"><svg viewBox="0 0 24 24"><path d="M4 4v16h16M8 14l3-3 3 2 5-6"/></svg><span>ย้อนหลัง</span></a>
   <a href="#set" data-tab="set"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg><span>ตั้งค่า</span></a>

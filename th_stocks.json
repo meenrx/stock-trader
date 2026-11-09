@@ -1,0 +1,4482 @@
+[
+{
+"s": "DELTA",
+"n": "DELTA ELECTRONICS",
+"mcap": 2270234411008
+},
+{
+"s": "PTT",
+"n": "PTT",
+"mcap": 1090486927360
+},
+{
+"s": "ADVANC",
+"n": "ADVANCED INFO SERVICE",
+"mcap": 1008257138688
+},
+{
+"s": "GULF",
+"n": "GULF DEVELOPMENT",
+"mcap": 915065012224
+},
+{
+"s": "AOT",
+"n": "AIRPORTS OF THAILAND",
+"mcap": 857142001664
+},
+{
+"s": "KTB",
+"n": "KRUNG THAI BANK",
+"mcap": 586994548736
+},
+{
+"s": "KBANK",
+"n": "KASIKORNBANK",
+"mcap": 571007959040
+},
+{
+"s": "PTTEP",
+"n": "PTT EXPLORATION AND",
+"mcap": 567707893760
+},
+{
+"s": "SCB",
+"n": "SCB X",
+"mcap": 505066094592
+},
+{
+"s": "TRUE",
+"n": "TRUE CORPORATION",
+"mcap": 452632510464
+},
+{
+"s": "CPALL",
+"n": "CP ALL",
+"mcap": 412138405888
+},
+{
+"s": "BBL",
+"n": "BANGKOK BANK",
+"mcap": 346454982656
+},
+{
+"s": "BDMS",
+"n": "BANGKOK DUSIT MEDICAL",
+"mcap": 319429246976
+},
+{
+"s": "CPN",
+"n": "CENTRAL PATTANA",
+"mcap": 295085998080
+},
+{
+"s": "SCC",
+"n": "THE SIAM CEMENT",
+"mcap": 284399992832
+},
+{
+"s": "BAY",
+"n": "BANK OF AYUDHYA",
+"mcap": 281357877248
+},
+{
+"s": "TTB",
+"n": "TMBTHANACHART BANK",
+"mcap": 231087259648
+},
+{
+"s": "CRC",
+"n": "CENTRAL RETAIL CORPORATION",
+"mcap": 183945494528
+},
+{
+"s": "PTTGC",
+"n": "PTT GLOBAL CHEMICAL",
+"mcap": 182608396288
+},
+{
+"s": "BH",
+"n": "BUMRUNGRAD HOSPITAL",
+"mcap": 156210937856
+},
+{
+"s": "CPAXT",
+"n": "CP AXTRA",
+"mcap": 155372142592
+},
+{
+"s": "CPF",
+"n": "CHAROEN POKPHAND FOODS",
+"mcap": 155319042048
+},
+{
+"s": "GPSC",
+"n": "GLOBAL POWER SYNERGY",
+"mcap": 149445656576
+},
+{
+"s": "OR",
+"n": "PTT OIL AND RETAIL BUSINESS",
+"mcap": 148799995904
+},
+{
+"s": "THAI",
+"n": "THAI AIRWAYS INTERNATIONAL",
+"mcap": 145761959936
+},
+{
+"s": "TLI",
+"n": "THAI LIFE INSURANCE",
+"mcap": 131675004928
+},
+{
+"s": "TOP",
+"n": "THAI OIL",
+"mcap": 126211702784
+},
+{
+"s": "IVL",
+"n": "INDORAMA VENTURES",
+"mcap": 125204504576
+},
+{
+"s": "MINT",
+"n": "MINOR INTERNATIONAL",
+"mcap": 120365891584
+},
+{
+"s": "SCGP",
+"n": "SCG PACKAGING",
+"mcap": 111615918080
+},
+{
+"s": "AWC",
+"n": "ASSET WORLD CORP",
+"mcap": 103125475328
+},
+{
+"s": "TISCO",
+"n": "TISCO FINANCIAL GROUP",
+"mcap": 100087914496
+},
+{
+"s": "KKP",
+"n": "KIATNAKIN PHATRA BANK",
+"mcap": 96379035648
+},
+{
+"s": "BEM",
+"n": "BANGKOK EXPRESSWAY AND METR",
+"mcap": 92113944576
+},
+{
+"s": "KTC",
+"n": "KRUNGTHAI CARD",
+"mcap": 88952520704
+},
+{
+"s": "BJC",
+"n": "BERLI JUCKER",
+"mcap": 80556711936
+},
+{
+"s": "HMPRO",
+"n": "HOME PRODUCT CENTER",
+"mcap": 80550002688
+},
+{
+"s": "RATCH",
+"n": "RATCH GROUP",
+"mcap": 79387500544
+},
+{
+"s": "TCAP",
+"n": "THANACHART CAPITAL",
+"mcap": 79089164288
+},
+{
+"s": "CCET",
+"n": "CAL-COMP ELECTRONICS",
+"mcap": 77330022400
+},
+{
+"s": "COM7",
+"n": "COM7",
+"mcap": 76035784704
+},
+{
+"s": "WHA",
+"n": "WHA CORPORATION",
+"mcap": 72342683648
+},
+{
+"s": "EGCO",
+"n": "ELECTRICITY GENERATING",
+"mcap": 70283075584
+},
+{
+"s": "KCE",
+"n": "KCE ELECTRONICS",
+"mcap": 66492481536
+},
+{
+"s": "MTC",
+"n": "MUANGTHAI CAPITAL",
+"mcap": 65189998592
+},
+{
+"s": "BCP",
+"n": "BANGCHAK CORPORATION",
+"mcap": 64370782208
+},
+{
+"s": "TFMAMA",
+"n": "THAI PRESIDENT FOODS",
+"mcap": 59676422144
+},
+{
+"s": "CENTEL",
+"n": "CENTRAL PLAZA HOTEL",
+"mcap": 58724999168
+},
+{
+"s": "OSP",
+"n": "OSOTSPA",
+"mcap": 57371623424
+},
+{
+"s": "BGRIM",
+"n": "B.GRIMM POWER",
+"mcap": 57351798784
+},
+{
+"s": "SPRC",
+"n": "STAR PETROLEUM REFINING",
+"mcap": 57233907712
+},
+{
+"s": "TFG",
+"n": "THAIFOODS GROUP",
+"mcap": 55805779968
+},
+{
+"s": "CBG",
+"n": "CARABAO GROUP",
+"mcap": 54749999104
+},
+{
+"s": "MRDIYT",
+"n": "MR. D.I.Y. HOLDING",
+"mcap": 51446181888
+},
+{
+"s": "ITC",
+"n": "I-TAIL CORPORATION",
+"mcap": 51000000512
+},
+{
+"s": "TU",
+"n": "THAI UNION GROUP",
+"mcap": 50116218880
+},
+{
+"s": "IRPC",
+"n": "IRPC",
+"mcap": 48985419776
+},
+{
+"s": "TIDLOR",
+"n": "TIDLOR HOLDINGS",
+"mcap": 47400366080
+},
+{
+"s": "CPNREIT",
+"n": "CPN RETAIL GROWTH",
+"mcap": 46349746176
+},
+{
+"s": "SCCC",
+"n": "SIAM CITY CEMENT",
+"mcap": 45147000832
+},
+{
+"s": "SPI",
+"n": "SAHA PATHANA INTER-HOLDING",
+"mcap": 44717764608
+},
+{
+"s": "BTG",
+"n": "BETAGRO",
+"mcap": 42504912896
+},
+{
+"s": "GUNKUL",
+"n": "GUNKUL ENGINEERING",
+"mcap": 42636152832
+},
+{
+"s": "FTREIT",
+"n": "FRASERS PROPERTY THAILAN",
+"mcap": 42355691520
+},
+{
+"s": "LH",
+"n": "LAND AND HOUSES",
+"mcap": 41823997952
+},
+{
+"s": "BKIH",
+"n": "BKI HOLDINGS",
+"mcap": 41305534464
+},
+{
+"s": "BANPU",
+"n": "BANPU",
+"mcap": 41144377344
+},
+{
+"s": "GLOBAL",
+"n": "SIAM GLOBAL HOUSE",
+"mcap": 40054231040
+},
+{
+"s": "TTW",
+"n": "TTW",
+"mcap": 39900000256
+},
+{
+"s": "BLA",
+"n": "BANGKOK LIFE ASSURANCE",
+"mcap": 38761746432
+},
+{
+"s": "PLANB",
+"n": "PLAN B MEDIA",
+"mcap": 38642348032
+},
+{
+"s": "WHART",
+"n": "WHA PREMIUM GROWTH",
+"mcap": 38481186816
+},
+{
+"s": "BA",
+"n": "BANGKOK AIRWAYS",
+"mcap": 38374551552
+},
+{
+"s": "SAWAD",
+"n": "SRISAWAD CORPORATION",
+"mcap": 37550059520
+},
+{
+"s": "RCL",
+"n": "REGIONAL CONTAINER LINES",
+"mcap": 33564375040
+},
+{
+"s": "HANA",
+"n": "HANA MICROELECTRONICS",
+"mcap": 32979908608
+},
+{
+"s": "MEGA",
+"n": "MEGA LIFESCIENCES",
+"mcap": 30951366656
+},
+{
+"s": "TOA",
+"n": "TOA PAINT (THAILAND)",
+"mcap": 30629634048
+},
+{
+"s": "STA",
+"n": "SRI TRANG AGRO-INDUSTRY",
+"mcap": 29798400000
+},
+{
+"s": "SPALI",
+"n": "SUPALAI",
+"mcap": 29671618560
+},
+{
+"s": "AMATA",
+"n": "AMATA CORPORATION",
+"mcap": 29612500992
+},
+{
+"s": "BTS",
+"n": "BTS GROUP HOLDINGS",
+"mcap": 29290723328
+},
+{
+"s": "CREDIT",
+"n": "THAI CREDIT BANK",
+"mcap": 29265688576
+},
+{
+"s": "CK",
+"n": "CH. KARNCHANG",
+"mcap": 28734083072
+},
+{
+"s": "AXTRART",
+"n": "AXTRA FUTURE CITY",
+"mcap": 27813664768
+},
+{
+"s": "BCH",
+"n": "BANGKOK CHAIN HOSPITAL",
+"mcap": 27431227392
+},
+{
+"s": "MBK",
+"n": "MBK",
+"mcap": 27392933888
+},
+{
+"s": "TASCO",
+"n": "TIPCO ASPHALT",
+"mcap": 26358640640
+},
+{
+"s": "WHAUP",
+"n": "WHA UTILITIES AND POWER",
+"mcap": 26201249792
+},
+{
+"s": "STECON",
+"n": "STECON GROUP",
+"mcap": 26128181248
+},
+{
+"s": "LHFG",
+"n": "LH FINANCIAL GROUP",
+"mcap": 25844066304
+},
+{
+"s": "TVO",
+"n": "THAI VEGETABLE OIL",
+"mcap": 25349931008
+},
+{
+"s": "STGT",
+"n": "SRI TRANG GLOVES (THAILAND",
+"mcap": 25300000768
+},
+{
+"s": "AP",
+"n": "AP (THAILAND)",
+"mcap": 25167196160
+},
+{
+"s": "SIRI",
+"n": "SANSIRI",
+"mcap": 24961734656
+},
+{
+"s": "AEONTS",
+"n": "AEON THANA SINSAP",
+"mcap": 21743749120
+},
+{
+"s": "BCPG",
+"n": "BCPG",
+"mcap": 20520951808
+},
+{
+"s": "RAM",
+"n": "RAMKHAMHAENG HOSPITAL",
+"mcap": 20519999488
+},
+{
+"s": "PB",
+"n": "PRESIDENT BAKERY",
+"mcap": 20475000832
+},
+{
+"s": "BAM",
+"n": "BANGKOK COMMERCIAL ASSET",
+"mcap": 20361867264
+},
+{
+"s": "VGI",
+"n": "VGI",
+"mcap": 19413182464
+},
+{
+"s": "SJWD",
+"n": "SCGJWD LOGISTICS",
+"mcap": 19186479104
+},
+{
+"s": "ICHI",
+"n": "ICHITAN GROUP",
+"mcap": 18720000000
+},
+{
+"s": "IMPACT",
+"n": "IMPACT GROWTH REAL ESTAT",
+"mcap": 18679500800
+},
+{
+"s": "STANLY",
+"n": "THAI STANLEY ELECTRIC",
+"mcap": 18619875328
+},
+{
+"s": "SPC",
+"n": "SAHA PATHANAPIBUL",
+"mcap": 18562500608
+},
+{
+"s": "CKP",
+"n": "CK POWER",
+"mcap": 18372405248
+},
+{
+"s": "AURA",
+"n": "AURORA DESIGN",
+"mcap": 18326450176
+},
+{
+"s": "PRM",
+"n": "PRIMA MARINE",
+"mcap": 18205550592
+},
+{
+"s": "M",
+"n": "MK RESTAURANT GROUP",
+"mcap": 17891835904
+},
+{
+"s": "VIBHA",
+"n": "VIBHAVADI MEDICAL CENTER",
+"mcap": 17530247168
+},
+{
+"s": "ERW",
+"n": "THE ERAWAN GROUP",
+"mcap": 17397469184
+},
+{
+"s": "CHG",
+"n": "CHULARAT HOSPITAL",
+"mcap": 17380001792
+},
+{
+"s": "BCT",
+"n": "BIRLA CARBON (THAILAND)",
+"mcap": 17100000256
+},
+{
+"s": "EA",
+"n": "ENERGY ABSOLUTE",
+"mcap": 17081640960
+},
+{
+"s": "FPT",
+"n": "FRASERS PROPERTY (THAILAND)",
+"mcap": 16350903296
+},
+{
+"s": "AYUD",
+"n": "ALLIANZ AYUDHYA CAPITAL",
+"mcap": 16349211648
+},
+{
+"s": "SKR",
+"n": "SIKARIN",
+"mcap": 16139684864
+},
+{
+"s": "LHHOTEL",
+"n": "LH HOTEL LEASEHOLD REAL",
+"mcap": 16105959424
+},
+{
+"s": "TPIPL",
+"n": "TPI POLENE",
+"mcap": 15716244480
+},
+{
+"s": "JMT",
+"n": "JMT NETWORK SERVICES",
+"mcap": 15181290496
+},
+{
+"s": "SGP",
+"n": "SIAMGAS AND PETROCHEMICALS",
+"mcap": 14886690816
+},
+{
+"s": "EPG",
+"n": "EASTERN POLYMER GROUP",
+"mcap": 14840000512
+},
+{
+"s": "QH",
+"n": "QUALITY HOUSES",
+"mcap": 14742605824
+},
+{
+"s": "JMART",
+"n": "JAYMART GROUP HOLDINGS",
+"mcap": 14639723520
+},
+{
+"s": "PR9",
+"n": "PRARAM 9 HOSPITAL",
+"mcap": 14625180672
+},
+{
+"s": "SAUCE",
+"n": "THAITHEPAROS",
+"mcap": 14490000384
+},
+{
+"s": "THANI",
+"n": "RATCHTHANI LEASING",
+"mcap": 14452042752
+},
+{
+"s": "TIPH",
+"n": "DHIPAYA GROUP HOLDINGS",
+"mcap": 14322446336
+},
+{
+"s": "DMT",
+"n": "DON MUANG TOLLWAY",
+"mcap": 14292917248
+},
+{
+"s": "TPIPP",
+"n": "TPI POLENE POWER",
+"mcap": 12851999744
+},
+{
+"s": "PSL",
+"n": "PRECIOUS SHIPPING",
+"mcap": 12694223872
+},
+{
+"s": "ACE",
+"n": "ABSOLUTE CLEAN ENERGY",
+"mcap": 12480957440
+},
+{
+"s": "FORTH",
+"n": "FORTH CORPORATION",
+"mcap": 12346946560
+},
+{
+"s": "DOHOME",
+"n": "DOHOME",
+"mcap": 12315122688
+},
+{
+"s": "PTL",
+"n": "POLYPLEX (THAILAND)",
+"mcap": 12240000000
+},
+{
+"s": "UVAN",
+"n": "UNIVANICH PALM OIL",
+"mcap": 12220000256
+},
+{
+"s": "PTG",
+"n": "PTG ENERGY",
+"mcap": 12191000576
+},
+{
+"s": "JTS",
+"n": "JASMINE TECHNOLOGY SOLUTION",
+"mcap": 12157920256
+},
+{
+"s": "THG",
+"n": "THONBURI HEALTHCARE GROUP",
+"mcap": 12076791808
+},
+{
+"s": "SGC",
+"n": "SG CAPITAL",
+"mcap": 12043253760
+},
+{
+"s": "GFPT",
+"n": "GFPT",
+"mcap": 12036682752
+},
+{
+"s": "ICC",
+"n": "I.C.C. INTERNATIONAL",
+"mcap": 11899999232
+},
+{
+"s": "DCC",
+"n": "DYNASTY CERAMIC",
+"mcap": 11889050624
+},
+{
+"s": "MOSHI",
+"n": "MOSHI MOSHI RETAIL",
+"mcap": 11879998464
+},
+{
+"s": "SCAP",
+"n": "SRISAWAD CAPITAL 1969",
+"mcap": 11642826752
+},
+{
+"s": "BAREIT",
+"n": "BA AIRPORT LEASEHOLD REA",
+"mcap": 11569599488
+},
+{
+"s": "LHSC",
+"n": "LH SHOPPING CENTERS",
+"mcap": 11515358208
+},
+{
+"s": "SKY",
+"n": "SKY ICT",
+"mcap": 11404749824
+},
+{
+"s": "MTI",
+"n": "MUANG THAI INSURANCE",
+"mcap": 11328000000
+},
+{
+"s": "ROJNA",
+"n": "ROJANA INDUSTRIAL PARK",
+"mcap": 11314585600
+},
+{
+"s": "ALUCON",
+"n": "ALUCON",
+"mcap": 11231995904
+},
+{
+"s": "SPCG",
+"n": "SPCG",
+"mcap": 11085795328
+},
+{
+"s": "SINGER",
+"n": "SINGER THAILAND",
+"mcap": 11003879424
+},
+{
+"s": "PSGC",
+"n": "PSG CORPORATION",
+"mcap": 10683688960
+},
+{
+"s": "PSP",
+"n": "P.S.P.SPECIALTIES",
+"mcap": 10010000384
+},
+{
+"s": "AAV",
+"n": "ASIA AVIATION",
+"mcap": 9894499328
+},
+{
+"s": "SCGD",
+"n": "SCG DECOR",
+"mcap": 9735000064
+},
+{
+"s": "FUTURERT",
+"n": "FUTURE CITY LEASEHOLD",
+"mcap": 9691059200
+},
+{
+"s": "KGI",
+"n": "KGI SECURITIES (THAILAND)",
+"mcap": 9679969280
+},
+{
+"s": "STPI",
+"n": "STP&I",
+"mcap": 9521514496
+},
+{
+"s": "AIMIRT",
+"n": "AIM INDUSTRIAL GROWTH",
+"mcap": 9339701248
+},
+{
+"s": "SAPPE",
+"n": "SAPPE",
+"mcap": 9235133440
+},
+{
+"s": "GST",
+"n": "GULF SPACE TECHNOLOGY",
+"mcap": 9207256064
+},
+{
+"s": "RBF",
+"n": "R&B FOOD SUPPLY",
+"mcap": 9167349760
+},
+{
+"s": "INETREIT",
+"n": "INET FREEHOLD AND",
+"mcap": 9107502080
+},
+{
+"s": "PROSPECT",
+"n": "PROSPECT LOGISTICS AND",
+"mcap": 9077149696
+},
+{
+"s": "SSP",
+"n": "SERMSANG POWER CORPORATION",
+"mcap": 8991544320
+},
+{
+"s": "AAI",
+"n": "ASIAN ALLIANCE INTERNATIONA",
+"mcap": 8889929728
+},
+{
+"s": "MC",
+"n": "MC GROUP",
+"mcap": 8632799232
+},
+{
+"s": "BBGI",
+"n": "BBGI",
+"mcap": 8531400192
+},
+{
+"s": "BLAND",
+"n": "BANGKOK LAND",
+"mcap": 8502787072
+},
+{
+"s": "WHAIR",
+"n": "WHA INDUSTRIAL LEASEHOLD",
+"mcap": 8470449152
+},
+{
+"s": "DUSIT",
+"n": "DUSIT THANI",
+"mcap": 8452849664
+},
+{
+"s": "NER",
+"n": "NORTH EAST RUBBER",
+"mcap": 8426038272
+},
+{
+"s": "TTA",
+"n": "THORESEN THAI AGENCIES",
+"mcap": 8378412544
+},
+{
+"s": "SISB",
+"n": "SISB",
+"mcap": 8365999616
+},
+{
+"s": "SA",
+"n": "SIAMESE ASSET",
+"mcap": 8272458240
+},
+{
+"s": "KAMART",
+"n": "KARMARTS",
+"mcap": 8255244800
+},
+{
+"s": "TQM",
+"n": "TQM ALPHA",
+"mcap": 8253636096
+},
+{
+"s": "PSH",
+"n": "PRUKSA HOLDING",
+"mcap": 8186860032
+},
+{
+"s": "XO",
+"n": "EXOTIC FOOD",
+"mcap": 8179843584
+},
+{
+"s": "DITTO",
+"n": "DITTO (THAILAND)",
+"mcap": 8118789120
+},
+{
+"s": "PRG",
+"n": "PRG CORPORATION",
+"mcap": 8104138752
+},
+{
+"s": "SUC",
+"n": "SAHA-UNION",
+"mcap": 8099999744
+},
+{
+"s": "SC",
+"n": "SC ASSET CORPORATION",
+"mcap": 7955709952
+},
+{
+"s": "SIS",
+"n": "SIS DISTRIBUTION (THAILAND)",
+"mcap": 7914489856
+},
+{
+"s": "SYNEX",
+"n": "SYNNEX (THAILAND)",
+"mcap": 7710987264
+},
+{
+"s": "TGH",
+"n": "THAI GROUP HOLDINGS",
+"mcap": 7596186112
+},
+{
+"s": "LANNA",
+"n": "THE LANNA RESOURCES",
+"mcap": 7559995392
+},
+{
+"s": "NEO",
+"n": "NEO CORPORATE",
+"mcap": 7470000128
+},
+{
+"s": "COCOCO",
+"n": "THAI COCONUT",
+"mcap": 7350000128
+},
+{
+"s": "KTIS",
+"n": "KASET THAI INTERNATIONAL",
+"mcap": 7295399936
+},
+{
+"s": "AIT",
+"n": "ADVANCED INFORMATION",
+"mcap": 7251881472
+},
+{
+"s": "KLINIQ",
+"n": "THE KLINIQUE MEDICAL",
+"mcap": 7095000064
+},
+{
+"s": "SAV",
+"n": "SAMART AVIATION SOLUTIONS",
+"mcap": 6958835200
+},
+{
+"s": "ONEE",
+"n": "THE ONE ENTERPRISE",
+"mcap": 6953250304
+},
+{
+"s": "TSTH",
+"n": "TATA STEEL (THAILAND)",
+"mcap": 6905663488
+},
+{
+"s": "ILM",
+"n": "INDEX LIVING MALL",
+"mcap": 6868000256
+},
+{
+"s": "EASTW",
+"n": "EASTERN WATER RESOURCES",
+"mcap": 6854547456
+},
+{
+"s": "NSL",
+"n": "NSL FOODS",
+"mcap": 6810000384
+},
+{
+"s": "ASK",
+"n": "ASIA SERMKIJ LEASING",
+"mcap": 6791585792
+},
+{
+"s": "SAT",
+"n": "SOMBOON ADVANCE TECHNOLOGY",
+"mcap": 6760582656
+},
+{
+"s": "ASW",
+"n": "ASSETWISE",
+"mcap": 6748084224
+},
+{
+"s": "MGC",
+"n": "MILLENNIUM GROUP",
+"mcap": 6738489856
+},
+{
+"s": "KSL",
+"n": "KHON KAEN SUGAR INDUSTRY",
+"mcap": 6659451392
+},
+{
+"s": "SAK",
+"n": "SAKSIAM LEASING",
+"mcap": 6455680000
+},
+{
+"s": "AIRA",
+"n": "AIRA CAPITAL",
+"mcap": 6378027008
+},
+{
+"s": "METCO",
+"n": "MURAMOTO ELECTRON",
+"mcap": 6290297856
+},
+{
+"s": "TKN",
+"n": "TAOKAENOI FOOD & MARKETING",
+"mcap": 6254720000
+},
+{
+"s": "PRINC",
+"n": "PRINCIPAL CAPITAL",
+"mcap": 6207970304
+},
+{
+"s": "BAFS",
+"n": "BANGKOK AVIATION FUEL",
+"mcap": 6183712256
+},
+{
+"s": "HTC",
+"n": "HAAD THIP",
+"mcap": 6149391360
+},
+{
+"s": "TFM",
+"n": "THAI UNION FEEDMILL",
+"mcap": 6050000384
+},
+{
+"s": "TITLE",
+"n": "RHOM BHO PROPERTY",
+"mcap": 5982725632
+},
+{
+"s": "PCE",
+"n": "PETCHSRIVICHAI ENTERPRISE",
+"mcap": 5940000768
+},
+{
+"s": "MEDEZE",
+"n": "MEDEZE GROUP",
+"mcap": 5927400448
+},
+{
+"s": "PM",
+"n": "PREMIER MARKETING",
+"mcap": 5860259840
+},
+{
+"s": "SNNP",
+"n": "SRINANAPORN MARKETING",
+"mcap": 5850033152
+},
+{
+"s": "ASTR",
+"n": "ASTRA ENTERPRISE",
+"mcap": 5838959104
+},
+{
+"s": "GGC",
+"n": "GLOBAL GREEN CHEMICALS",
+"mcap": 5834899968
+},
+{
+"s": "TNL",
+"n": "THANULUX",
+"mcap": 5787830272
+},
+{
+"s": "GVREIT",
+"n": "GOLDEN VENTURES LEASEHOL",
+"mcap": 5785079808
+},
+{
+"s": "ASIAN",
+"n": "ASIAN SEA CORPORATION",
+"mcap": 5761966592
+},
+{
+"s": "TURTLE",
+"n": "SUPER TURTLE",
+"mcap": 5754168320
+},
+{
+"s": "ANI",
+"n": "ASIA NETWORK INTERNATIONAL",
+"mcap": 5728799744
+},
+{
+"s": "KCG",
+"n": "KCG CORPORATION",
+"mcap": 5667999744
+},
+{
+"s": "UTP",
+"n": "UNITED PAPER",
+"mcap": 5655000064
+},
+{
+"s": "KYE",
+"n": "KANG YONG ELECTRIC",
+"mcap": 5524199936
+},
+{
+"s": "MAJOR",
+"n": "MAJOR CINEPLEX GROUP",
+"mcap": 5493863936
+},
+{
+"s": "XPG",
+"n": "XSPRING CAPITAL",
+"mcap": 5457097216
+},
+{
+"s": "SAMART",
+"n": "SAMART CORPORATION",
+"mcap": 5434768896
+},
+{
+"s": "SRICHA",
+"n": "SRIRACHA CONSTRUCTION",
+"mcap": 5391894528
+},
+{
+"s": "SHANG",
+"n": "SHANGRI-LA HOTEL",
+"mcap": 5362500096
+},
+{
+"s": "SABINA",
+"n": "SABINA",
+"mcap": 5351499776
+},
+{
+"s": "STELLA",
+"n": "STELLA X",
+"mcap": 5227977216
+},
+{
+"s": "JAS",
+"n": "JASMINE INTERNATIONAL",
+"mcap": 5224006656
+},
+{
+"s": "SMPC",
+"n": "SAHAMITR PRESSURE CONTAINE",
+"mcap": 5140860928
+},
+{
+"s": "CMR",
+"n": "CHIANG MAI RAM MEDICAL",
+"mcap": 5048195072
+},
+{
+"s": "SHR",
+"n": "S HOTELS AND RESORTS",
+"mcap": 5031095808
+},
+{
+"s": "VIH",
+"n": "SRIVICHAIVEJVIVAT",
+"mcap": 5014592512
+},
+{
+"s": "AH",
+"n": "AAPICO HITECH",
+"mcap": 5007702528
+},
+{
+"s": "SMT",
+"n": "STARS MICROELECTRONICS",
+"mcap": 4921335296
+},
+{
+"s": "TNH",
+"n": "THAI NAKARIN HOSPITAL",
+"mcap": 4904999936
+},
+{
+"s": "ROCTEC",
+"n": "ROCTEC GLOBAL",
+"mcap": 4870786048
+},
+{
+"s": "NYT",
+"n": "NAMYONG TERMINAL",
+"mcap": 4786399744
+},
+{
+"s": "PIN",
+"n": "PINTHONG INDUSTRIAL PARK",
+"mcap": 4779200000
+},
+{
+"s": "ALLY",
+"n": "ALLY FREEHOLD AND LEASEHOL",
+"mcap": 4738271744
+},
+{
+"s": "RJH",
+"n": "RAJTHANEE HOSPITAL",
+"mcap": 4695655936
+},
+{
+"s": "ASP",
+"n": "ASIA PLUS GROUP HOLDINGS",
+"mcap": 4673454592
+},
+{
+"s": "NCAP",
+"n": "NEXT CAPITAL",
+"mcap": 4644000256
+},
+{
+"s": "FSMART",
+"n": "FORTH SMART SERVICE",
+"mcap": 4631819264
+},
+{
+"s": "NEX",
+"n": "NEX POINT",
+"mcap": 4462321152
+},
+{
+"s": "MST",
+"n": "MAYBANK SECURITIES",
+"mcap": 4281108992
+},
+{
+"s": "DRT",
+"n": "DIAMOND BUILDING PRODUCTS",
+"mcap": 4263174144
+},
+{
+"s": "TPRIME",
+"n": "THAILAND PRIME PROPERTY",
+"mcap": 4243125248
+},
+{
+"s": "OHTL",
+"n": "OHTL",
+"mcap": 4227384064
+},
+{
+"s": "SNP",
+"n": "S & P SYNDICATE",
+"mcap": 4187169024
+},
+{
+"s": "WPH",
+"n": "WATTANAPAT HOSPITAL TRANG",
+"mcap": 4177631488
+},
+{
+"s": "TMD",
+"n": "THAI METAL DRUM",
+"mcap": 4162500096
+},
+{
+"s": "ORI",
+"n": "ORIGIN PROPERTY",
+"mcap": 4147467264
+},
+{
+"s": "PCSGH",
+"n": "P.C.S. MACHINE GROUP",
+"mcap": 4146999808
+},
+{
+"s": "FM",
+"n": "FOOD MOMENTS",
+"mcap": 4109363712
+},
+{
+"s": "ADVICE",
+"n": "ADVICE IT INFINITE",
+"mcap": 4092000000
+},
+{
+"s": "TURBO",
+"n": "NGERNTURBO",
+"mcap": 4085100032
+},
+{
+"s": "TMAN",
+"n": "T.MAN PHARMACEUTICAL",
+"mcap": 4080036608
+},
+{
+"s": "EKH",
+"n": "EKACHAI MEDICAL CARE",
+"mcap": 4080000000
+},
+{
+"s": "POPF",
+"n": "PRIME OFFICE LEASEHOLD",
+"mcap": null
+},
+{
+"s": "BOL",
+"n": "BUSINESS ONLINE",
+"mcap": 4053297152
+},
+{
+"s": "SPG",
+"n": "THE SIAM PAN GROUP",
+"mcap": 4036499968
+},
+{
+"s": "LOXLEY",
+"n": "LOXLEY",
+"mcap": 3963671040
+},
+{
+"s": "BGC",
+"n": "BG CONTAINER GLASS",
+"mcap": 3932070400
+},
+{
+"s": "KGEN",
+"n": "KING GEN",
+"mcap": 3917278208
+},
+{
+"s": "TACC",
+"n": "T.A.C. CONSUMER",
+"mcap": 3884355328
+},
+{
+"s": "TSC",
+"n": "THAI STEEL CABLE",
+"mcap": 3871019776
+},
+{
+"s": "LALIN",
+"n": "LALIN PROPERTY",
+"mcap": 3829497600
+},
+{
+"s": "TMT",
+"n": "TMT STEEL",
+"mcap": 3813920256
+},
+{
+"s": "TKS",
+"n": "T.K.S. TECHNOLOGIES",
+"mcap": 3781512448
+},
+{
+"s": "PCC",
+"n": "PRECISE CORPORATION",
+"mcap": 3777986816
+},
+{
+"s": "TSTE",
+"n": "TSTE",
+"mcap": 3775772672
+},
+{
+"s": "SKN",
+"n": "S.KIJCHAI ENTERPRISE",
+"mcap": 3743999744
+},
+{
+"s": "KBS",
+"n": "KHONBURI SUGAR",
+"mcap": 3739583488
+},
+{
+"s": "LST",
+"n": "LAM SOON (THAILAND)",
+"mcap": 3739200000
+},
+{
+"s": "GRAMMY",
+"n": "GMM GRAMMY",
+"mcap": 3738970880
+},
+{
+"s": "ASEFA",
+"n": "ASEFA",
+"mcap": 3716959488
+},
+{
+"s": "MCS",
+"n": "M.C.S.STEEL",
+"mcap": 3649050112
+},
+{
+"s": "NNCL",
+"n": "NAVANAKORN",
+"mcap": 3645893632
+},
+{
+"s": "INSET",
+"n": "INFRASET",
+"mcap": 3595334656
+},
+{
+"s": "PLAT",
+"n": "THE PLATINUM GROUP",
+"mcap": 3584000000
+},
+{
+"s": "BOFFICE",
+"n": "BHIRAJ OFFICE LEASEHOLD",
+"mcap": 3571300864
+},
+{
+"s": "BIZ",
+"n": "BUSINESS ALIGNMENT",
+"mcap": 3544336384
+},
+{
+"s": "SPA",
+"n": "SIAM WELLNESS GROUP",
+"mcap": 3514047488
+},
+{
+"s": "HUMAN",
+"n": "HUMANICA",
+"mcap": 3512013056
+},
+{
+"s": "III",
+"n": "TRIPLE I LOGISTICS",
+"mcap": 3489079808
+},
+{
+"s": "BEC",
+"n": "BEC WORLD",
+"mcap": 3440000000
+},
+{
+"s": "BBIK",
+"n": "BLUEBIK GROUP",
+"mcap": 3420264704
+},
+{
+"s": "DREIT",
+"n": "DUSIT THANI FREEHOLD AND",
+"mcap": 3415200256
+},
+{
+"s": "TOG",
+"n": "THAI OPTICAL GROUP",
+"mcap": 3391373824
+},
+{
+"s": "GROREIT",
+"n": "GRANDE ROYAL ORCHID",
+"mcap": 3370499840
+},
+{
+"s": "TEGH",
+"n": "THAI EASTERN GROUP HOLDING",
+"mcap": 3369600000
+},
+{
+"s": "S",
+"n": "SINGHA ESTATE",
+"mcap": 3358322688
+},
+{
+"s": "SUPER",
+"n": "SUPER ENERGY CORPORATION",
+"mcap": 3281936640
+},
+{
+"s": "QHHRREIT",
+"n": "QUALITY HOUSES HOTEL",
+"mcap": 3240000000
+},
+{
+"s": "HENG",
+"n": "HENG LEASING AND CAPITAL",
+"mcap": 3238500096
+},
+{
+"s": "PT",
+"n": "PREMIER TECHNOLOGY",
+"mcap": 3236333568
+},
+{
+"s": "TKC",
+"n": "TURNKEY COMMUNICATION",
+"mcap": 3220000000
+},
+{
+"s": "TIPCO",
+"n": "TIPCO FOODS",
+"mcap": 3209154816
+},
+{
+"s": "ITEL",
+"n": "INTERLINK TELECOM",
+"mcap": 3190277888
+},
+{
+"s": "TPAC",
+"n": "THAI PLASPAC",
+"mcap": 3183862272
+},
+{
+"s": "TEAM",
+"n": "TEAM PRECISION",
+"mcap": 3172575488
+},
+{
+"s": "CNT",
+"n": "CHRISTIANI & NIELSEN (THAI)",
+"mcap": 3165944576
+},
+{
+"s": "MCOT",
+"n": "MCOT",
+"mcap": 3133172224
+},
+{
+"s": "POLY",
+"n": "POLYNET",
+"mcap": 3104999936
+},
+{
+"s": "VNG",
+"n": "VANACHAI GROUP",
+"mcap": 3071370240
+},
+{
+"s": "AU",
+"n": "AFTER YOU",
+"mcap": 3066744576
+},
+{
+"s": "TRT",
+"n": "TIRATHAI",
+"mcap": 3064681984
+},
+{
+"s": "MEB",
+"n": "MEB CORPORATION",
+"mcap": 3060000000
+},
+{
+"s": "NTV",
+"n": "NONTHAVEJ HOSPITAL",
+"mcap": 2992000000
+},
+{
+"s": "IP",
+"n": "INTER PHARMA",
+"mcap": 2941974016
+},
+{
+"s": "INOX",
+"n": "POSCO-THAINOX",
+"mcap": 2931186432
+},
+{
+"s": "PHG",
+"n": "PATRANGSIT HEALTHCARE GROUP",
+"mcap": 2924999936
+},
+{
+"s": "TC",
+"n": "TROPICAL CANNING (THAILAND)",
+"mcap": 2920500224
+},
+{
+"s": "PIS",
+"n": "PRO INSIDE",
+"mcap": 2916000000
+},
+{
+"s": "TVH",
+"n": "THAIVIVAT HOLDINGS",
+"mcap": 2892949760
+},
+{
+"s": "QHBREIT",
+"n": "QUALITY HOUSES BUSINESS",
+"mcap": 2869199872
+},
+{
+"s": "HPF",
+"n": "HEMARAJ INDUSTRIAL PROPERTY",
+"mcap": null
+},
+{
+"s": "BRR",
+"n": "BURIRAM SUGAR",
+"mcap": 2858593536
+},
+{
+"s": "M-CHAI",
+"n": "MAHACHAI HOSPITAL",
+"mcap": 2832000000
+},
+{
+"s": "CGH",
+"n": "COUNTRY GROUP HOLDINGS",
+"mcap": 2823665664
+},
+{
+"s": "SITHAI",
+"n": "SRITHAI SUPERWARE",
+"mcap": 2821330176
+},
+{
+"s": "SCG",
+"n": "RATCH PATHANA ENERGY",
+"mcap": 2816143360
+},
+{
+"s": "MFC",
+"n": "MFC ASSET MANAGEMENT",
+"mcap": 2813792000
+},
+{
+"s": "SYNTEC",
+"n": "SYNTEC CONSTRUCTION",
+"mcap": 2766041344
+},
+{
+"s": "UNIQ",
+"n": "UNIQUE ENGINEERING AND",
+"mcap": 2745780992
+},
+{
+"s": "GABLE",
+"n": "G-ABLE",
+"mcap": 2716083200
+},
+{
+"s": "MFEC",
+"n": "MFEC",
+"mcap": 2714939392
+},
+{
+"s": "PYLON",
+"n": "PYLON",
+"mcap": 2714541568
+},
+{
+"s": "SYMC",
+"n": "SYMPHONY COMMUNICATION",
+"mcap": 2710342912
+},
+{
+"s": "EURO",
+"n": "EURO CREATIONS",
+"mcap": 2698301952
+},
+{
+"s": "S11",
+"n": "S 11 GROUP",
+"mcap": 2697200128
+},
+{
+"s": "TTT",
+"n": "TORAY TEXTILES (THAILAND)",
+"mcap": 2675099904
+},
+{
+"s": "AMATAR",
+"n": "AMATA SUMMIT GROWTH",
+"mcap": 2666280192
+},
+{
+"s": "DEMCO",
+"n": "DEMCO",
+"mcap": 2638229248
+},
+{
+"s": "CMAN",
+"n": "CHEMEMAN",
+"mcap": 2630400000
+},
+{
+"s": "SCP",
+"n": "SOUTHERN CONCRETE PILE",
+"mcap": 2625390080
+},
+{
+"s": "SNC",
+"n": "SNC FORMER",
+"mcap": 2624690944
+},
+{
+"s": "HFT",
+"n": "HWA FONG RUBBER (THAILAND)",
+"mcap": 2620568576
+},
+{
+"s": "LPH",
+"n": "LADPRAO GENERAL HOSPITAL",
+"mcap": 2592000000
+},
+{
+"s": "ILINK",
+"n": "INTERLINK COMMUNICATION",
+"mcap": 2576817152
+},
+{
+"s": "RPH",
+"n": "RATCHAPHRUEK HOSPITAL",
+"mcap": 2567128832
+},
+{
+"s": "IRC",
+"n": "INOUE RUBBER (THAILAND)",
+"mcap": 2556362496
+},
+{
+"s": "SEAOIL",
+"n": "SEA OIL",
+"mcap": 2497758464
+},
+{
+"s": "SWC",
+"n": "SHERWOOD CORPORATION",
+"mcap": 2493660928
+},
+{
+"s": "MASTER",
+"n": "MASTER STYLE",
+"mcap": 2489121792
+},
+{
+"s": "IT",
+"n": "IT CITY",
+"mcap": 2473192192
+},
+{
+"s": "CSC",
+"n": "CROWN SEAL",
+"mcap": 2470041344
+},
+{
+"s": "NTF",
+"n": "NTF INTERGROUP (THAILAND)",
+"mcap": 2460000000
+},
+{
+"s": "GC",
+"n": "GLOBAL CONNECTIONS",
+"mcap": 2441999360
+},
+{
+"s": "FPI",
+"n": "FORTUNE PARTS INDUSTRY",
+"mcap": 2420847872
+},
+{
+"s": "TRU",
+"n": "THAI RUNG UNION CAR",
+"mcap": 2388134656
+},
+{
+"s": "CTW",
+"n": "CHAROONG THAI WIRE & CABLE",
+"mcap": 2367542272
+},
+{
+"s": "Q-CON",
+"n": "QUALITY CONSTRUCTION",
+"mcap": 2360000000
+},
+{
+"s": "BLC",
+"n": "BANGKOK LAB AND COSMETIC",
+"mcap": 2328000000
+},
+{
+"s": "SMO",
+"n": "SMOTHONG GROUP",
+"mcap": 2318400000
+},
+{
+"s": "ATLAS",
+"n": "ATLAS ENERGY",
+"mcap": 2312024576
+},
+{
+"s": "TGE",
+"n": "THACHANG GREEN ENERGY",
+"mcap": 2310756096
+},
+{
+"s": "GJS",
+"n": "G J STEEL",
+"mcap": 2293842176
+},
+{
+"s": "TEAMG",
+"n": "TEAM CONSULTING",
+"mcap": 2241050880
+},
+{
+"s": "SFLEX",
+"n": "STARFLEX",
+"mcap": 2239385344
+},
+{
+"s": "SEAFCO",
+"n": "SEAFCO",
+"mcap": 2229030400
+},
+{
+"s": "LTMH",
+"n": "LTMH",
+"mcap": 2223740928
+},
+{
+"s": "TL",
+"n": "TECHLEAD NEXT",
+"mcap": 2222708224
+},
+{
+"s": "TNP",
+"n": "THANAPIRIYA",
+"mcap": 2208000000
+},
+{
+"s": "TMW",
+"n": "THAI MITSUWA",
+"mcap": 2204474880
+},
+{
+"s": "TSE",
+"n": "THAI SOLAR ENERGY",
+"mcap": 2199824896
+},
+{
+"s": "CPNCG",
+"n": "CPN COMMERCIAL GROWTH",
+"mcap": null
+},
+{
+"s": "AMATAV",
+"n": "AMATA VN",
+"mcap": 2195750400
+},
+{
+"s": "RABBIT",
+"n": "RABBIT HOLDINGS",
+"mcap": 2170504448
+},
+{
+"s": "SO",
+"n": "SIAMRAJATHANEE",
+"mcap": 2168643584
+},
+{
+"s": "SUSCO",
+"n": "SUSCO",
+"mcap": 2165999872
+},
+{
+"s": "SENA",
+"n": "SENADEVELOPMENT",
+"mcap": 2164821248
+},
+{
+"s": "CPI",
+"n": "CHUMPORN PALM OIL INDUSTRY",
+"mcap": 2164014080
+},
+{
+"s": "BTC",
+"n": "THE BROOKER GROUP",
+"mcap": 2160164352
+},
+{
+"s": "LEE",
+"n": "LEE FEED MILL",
+"mcap": 2156195840
+},
+{
+"s": "AI",
+"n": "ASIAN INSULATORS",
+"mcap": 2141997056
+},
+{
+"s": "UPOIC",
+"n": "UNITED PALM OIL INDUSTRY",
+"mcap": 2138729856
+},
+{
+"s": "SPTX",
+"n": "SPT X",
+"mcap": 2136448768
+},
+{
+"s": "INET",
+"n": "INTERNET THAILAND",
+"mcap": 2136330240
+},
+{
+"s": "TK",
+"n": "THITIKORN",
+"mcap": 2130000128
+},
+{
+"s": "NAM",
+"n": "NAMWIWAT MEDICAL CORPORATIO",
+"mcap": 2128000000
+},
+{
+"s": "TWPC",
+"n": "THAI WAH",
+"mcap": 2113010304
+},
+{
+"s": "LPN",
+"n": "L.P.N. DEVELOPMENT",
+"mcap": 2107345664
+},
+{
+"s": "MAGURO",
+"n": "MAGURO GROUP",
+"mcap": 2091600000
+},
+{
+"s": "MSC",
+"n": "METRO SYSTEMS CORPORATION",
+"mcap": 2088000128
+},
+{
+"s": "KISS",
+"n": "ROJUKISS INTERNATIONAL",
+"mcap": 2082635520
+},
+{
+"s": "AUCT",
+"n": "UNION AUCTION",
+"mcap": 2078999936
+},
+{
+"s": "PAP",
+"n": "PACIFIC PIPE",
+"mcap": 2072400128
+},
+{
+"s": "A5",
+"n": "ASSET FIVE GROUP",
+"mcap": 2061500160
+},
+{
+"s": "BEYOND",
+"n": "BOUND AND BEYOND",
+"mcap": 2056768256
+},
+{
+"s": "UBE",
+"n": "UBON BIO ETHANOL",
+"mcap": 2035428736
+},
+{
+"s": "THIP",
+"n": "THANTAWAN INDUSTRY",
+"mcap": 2024993024
+},
+{
+"s": "LUXF",
+"n": "LUXURY REAL ESTATE",
+"mcap": null
+},
+{
+"s": "MJLF",
+"n": "MAJOR CINEPLEX LIFESTYLE",
+"mcap": 2012999936
+},
+{
+"s": "NETBAY",
+"n": "NETBAY",
+"mcap": 2000000000
+},
+{
+"s": "SELIC",
+"n": "SELIC CORP",
+"mcap": 1976365952
+},
+{
+"s": "OKJ",
+"n": "PLUK PHAK PRAW RAK MAE",
+"mcap": 1973160064
+},
+{
+"s": "NKT",
+"n": "NAKORNTHON HOSPITAL",
+"mcap": 1968800000
+},
+{
+"s": "PRTR",
+"n": "PRTR GROUP",
+"mcap": 1968000000
+},
+{
+"s": "MALEE",
+"n": "MALEE GROUP",
+"mcap": 1964632448
+},
+{
+"s": "KTBSTMR",
+"n": "KTBST MIXED FREEHOLD AN",
+"mcap": 1959750016
+},
+{
+"s": "2S",
+"n": "2S METAL",
+"mcap": 1957985664
+},
+{
+"s": "TR",
+"n": "THAI RAYON",
+"mcap": 1925280000
+},
+{
+"s": "APURE",
+"n": "AGRIPURE HOLDINGS",
+"mcap": 1915158016
+},
+{
+"s": "AMA",
+"n": "AMA MARINE",
+"mcap": 1895575424
+},
+{
+"s": "HYDROGEN",
+"n": "HYDROGEN FREEHOLD AND",
+"mcap": 1879865984
+},
+{
+"s": "WACOAL",
+"n": "THAI WACOAL",
+"mcap": 1872000000
+},
+{
+"s": "AIE",
+"n": "AI ENERGY",
+"mcap": 1868418816
+},
+{
+"s": "SAMTEL",
+"n": "SAMART TELCOMS",
+"mcap": 1866360192
+},
+{
+"s": "ASIA",
+"n": "ASIA HOTEL",
+"mcap": 1856000000
+},
+{
+"s": "SMIT",
+"n": "SAHAMIT MACHINERY",
+"mcap": 1855000064
+},
+{
+"s": "NOBLE",
+"n": "NOBLE DEVELOPMENT",
+"mcap": 1848708480
+},
+{
+"s": "ALT",
+"n": "ALT TELECOM",
+"mcap": 1826868224
+},
+{
+"s": "WP",
+"n": "WP ENERGY",
+"mcap": 1813547648
+},
+{
+"s": "SPRIME",
+"n": "S PRIME GROWTH LEASEHOLD",
+"mcap": 1804870016
+},
+{
+"s": "TNR",
+"n": "THAI NIPPON RUBBER INDUSTRY",
+"mcap": 1784999936
+},
+{
+"s": "AHC",
+"n": "AIKCHOL HOSPITAL",
+"mcap": 1783920128
+},
+{
+"s": "SNPS",
+"n": "SPECIALTY NATURAL PRODUCTS",
+"mcap": 1765800064
+},
+{
+"s": "WICE",
+"n": "WICE LOGISTICS",
+"mcap": 1743518592
+},
+{
+"s": "CSR",
+"n": "CITY SPORTS AND RECREATION",
+"mcap": 1742499968
+},
+{
+"s": "ITD",
+"n": "ITALIAN-THAI DEVELOPMENT",
+"mcap": 1742356864
+},
+{
+"s": "THRE",
+"n": "THAI REINSURANCE",
+"mcap": 1728147456
+},
+{
+"s": "BYD",
+"n": "BYDH SECURITIES",
+"mcap": 1719507456
+},
+{
+"s": "QTC",
+"n": "QTC ENERGY",
+"mcap": 1705462784
+},
+{
+"s": "YUASA",
+"n": "YUASA BATTERY (THAILAND)",
+"mcap": 1700475008
+},
+{
+"s": "AMARIN",
+"n": "AMARIN CORPORATIONS",
+"mcap": 1687095936
+},
+{
+"s": "BRI",
+"n": "BRITANIA",
+"mcap": 1671192576
+},
+{
+"s": "PRIN",
+"n": "PRINSIRI",
+"mcap": 1647015936
+},
+{
+"s": "BR",
+"n": "BANGKOK RANCH",
+"mcap": 1616801408
+},
+{
+"s": "UAC",
+"n": "UAC GLOBAL",
+"mcap": 1615607040
+},
+{
+"s": "ZEN",
+"n": "ZEN CORPORATION GROUP",
+"mcap": 1610196352
+},
+{
+"s": "SVOA",
+"n": "SVOA",
+"mcap": 1602541824
+},
+{
+"s": "SUN",
+"n": "SUNSWEET",
+"mcap": 1594433024
+},
+{
+"s": "TAE",
+"n": "THAI AGRO ENERGY",
+"mcap": 1590000000
+},
+{
+"s": "UV",
+"n": "UNIVENTURES",
+"mcap": 1586898944
+},
+{
+"s": "FTE",
+"n": "FIRETRADE ENGINEERING",
+"mcap": 1583999872
+},
+{
+"s": "AGE",
+"n": "ASIA GREEN ENERGY",
+"mcap": 1543515136
+},
+{
+"s": "CTARAF",
+"n": "CENTARA HOTELS & RESORTS",
+"mcap": null
+},
+{
+"s": "AKR",
+"n": "EKARAT ENGINEERING",
+"mcap": 1516054656
+},
+{
+"s": "TPBI",
+"n": "TPBI",
+"mcap": 1509105152
+},
+{
+"s": "APCO",
+"n": "ASIAN PHYTOCEUTICALS",
+"mcap": 1500000000
+},
+{
+"s": "KCC",
+"n": "KNIGHT CLUB CAPITAL HOLDING",
+"mcap": 1496369152
+},
+{
+"s": "SAAM",
+"n": "SAAM DEVELOPMENT",
+"mcap": 1483559936
+},
+{
+"s": "MII",
+"n": "MFC INDUSTRIAL INVESTMENT",
+"mcap": 1482249984
+},
+{
+"s": "NVD",
+"n": "NIRVANA DEVELOPMENT",
+"mcap": 1463002240
+},
+{
+"s": "SSSC",
+"n": "SIAM STEEL SERVICE CENTER",
+"mcap": 1459195136
+},
+{
+"s": "MDX",
+"n": "M.D.X.",
+"mcap": 1455315072
+},
+{
+"s": "SAFE",
+"n": "SAFE FERTILITY GROUP",
+"mcap": 1452870528
+},
+{
+"s": "TQR",
+"n": "TQR",
+"mcap": 1449000064
+},
+{
+"s": "ARROW",
+"n": "ARROW SYNDICATE",
+"mcap": 1438622592
+},
+{
+"s": "CPW",
+"n": "COPPERWIRED",
+"mcap": 1428000128
+},
+{
+"s": "VRANDA",
+"n": "VERANDA RESORT",
+"mcap": 1425780224
+},
+{
+"s": "SPVI",
+"n": "S P V I",
+"mcap": 1424000000
+},
+{
+"s": "CHAYO",
+"n": "CHAYO GROUP",
+"mcap": 1422047616
+},
+{
+"s": "DDD",
+"n": "DO DAY DREAM",
+"mcap": 1417349248
+},
+{
+"s": "LHRREIT",
+"n": "LAND AND HOUSES",
+"mcap": 1412400128
+},
+{
+"s": "ICN",
+"n": "INFORMATION AND",
+"mcap": 1397968768
+},
+{
+"s": "ALPHAX",
+"n": "ALPHA DIVISIONS",
+"mcap": 1393856128
+},
+{
+"s": "KJL",
+"n": "KIJCHAROEN ENGINEERING",
+"mcap": 1391986688
+},
+{
+"s": "JR",
+"n": "J.R.W. UTILITY",
+"mcap": 1390800000
+},
+{
+"s": "PACO",
+"n": "PRESIDENT AUTOMOBILE",
+"mcap": 1390000128
+},
+{
+"s": "BKGI",
+"n": "BANGKOK GENOMICS INNOVATIO",
+"mcap": 1380000000
+},
+{
+"s": "ASAP",
+"n": "SYNERGETIC AUTO PERFORMANC",
+"mcap": 1379399936
+},
+{
+"s": "SRIPANWA",
+"n": "SRI PANWA HOSPITALITY",
+"mcap": 1378576128
+},
+{
+"s": "ANAN",
+"n": "ANANDA DEVELOPMENT",
+"mcap": 1374864256
+},
+{
+"s": "ETC",
+"n": "EARTH TECH ENVIRONMENT",
+"mcap": 1366400000
+},
+{
+"s": "LHK",
+"n": "LOHAKIT METAL",
+"mcap": 1363479936
+},
+{
+"s": "UMS",
+"n": "UNIQUE MINING SERVICES",
+"mcap": 1361359104
+},
+{
+"s": "GYT",
+"n": "GOODYEAR (THAILAND)",
+"mcap": 1354200064
+},
+{
+"s": "TTLPF",
+"n": "TALAAD THAI LEASEHOLD",
+"mcap": null
+},
+{
+"s": "SSF",
+"n": "SURAPON FOODS",
+"mcap": 1349995008
+},
+{
+"s": "WORK",
+"n": "WORKPOINT ENTERTAINMENT",
+"mcap": 1342343808
+},
+{
+"s": "AJ",
+"n": "A.J. PLAST",
+"mcap": 1336155904
+},
+{
+"s": "WINNER",
+"n": "WINNER GROUP ENTERPRISE",
+"mcap": 1331943808
+},
+{
+"s": "POWER",
+"n": "POWER SOLUTION",
+"mcap": 1316578304
+},
+{
+"s": "HTECH",
+"n": "HALCYON TECHNOLOGY",
+"mcap": 1313223296
+},
+{
+"s": "SICT",
+"n": "SILICON CRAFT TECHNOLOGY",
+"mcap": 1305599616
+},
+{
+"s": "SECURE",
+"n": "NFORCE SECURE",
+"mcap": 1294536576
+},
+{
+"s": "MODERN",
+"n": "MODERNFORM GROUP",
+"mcap": 1282499968
+},
+{
+"s": "MICRO",
+"n": "MICRO LEASING",
+"mcap": 1280950016
+},
+{
+"s": "JUBILE",
+"n": "JUBILEE ENTERPRISE",
+"mcap": 1272193792
+},
+{
+"s": "CFRESH",
+"n": "SEAFRESH INDUSTRY",
+"mcap": 1270125952
+},
+{
+"s": "TPS",
+"n": "THE PRACTICAL SOLUTION",
+"mcap": 1267493248
+},
+{
+"s": "WHABT",
+"n": "WHA BUSINESS COMPLEX",
+"mcap": 1262499968
+},
+{
+"s": "TRP",
+"n": "AESTHETIC CONNECT",
+"mcap": 1259810048
+},
+{
+"s": "ML",
+"n": "MIDA LEASING",
+"mcap": 1259098496
+},
+{
+"s": "EAST",
+"n": "EASTERN COMMERCIAL LEASING",
+"mcap": 1248345344
+},
+{
+"s": "WASH",
+"n": "LAUNDRY YOU",
+"mcap": 1235294208
+},
+{
+"s": "UKEM",
+"n": "UNION PETROCHEMICAL",
+"mcap": 1224809472
+},
+{
+"s": "JDF",
+"n": "JD FOOD",
+"mcap": 1224000000
+},
+{
+"s": "ESTAR",
+"n": "EASTERN STAR REAL ESTATE",
+"mcap": 1205339136
+},
+{
+"s": "TAN",
+"n": "TANACHIRA RETAIL CORPORATIO",
+"mcap": 1196800000
+},
+{
+"s": "KCAR",
+"n": "KRUNGTHAI CAR RENT AND",
+"mcap": 1195000064
+},
+{
+"s": "BKD",
+"n": "BANGKOK DEC-CON",
+"mcap": 0
+},
+{
+"s": "BJCHI",
+"n": "BJC HEAVY INDUSTRIES",
+"mcap": 1164856192
+},
+{
+"s": "STECH",
+"n": "SIAM TECHNIC CONCRETE",
+"mcap": 1160000000
+},
+{
+"s": "DTCENT",
+"n": "D.T.C. ENTERPRISE",
+"mcap": 1157881472
+},
+{
+"s": "HARN",
+"n": "HARN ENGINEERING SOLUTIONS",
+"mcap": 1151464960
+},
+{
+"s": "BWG",
+"n": "BETTER WORLD GREEN",
+"mcap": 1148617472
+},
+{
+"s": "VCOM",
+"n": "VINTCOM TECHNOLOGY",
+"mcap": 1148199424
+},
+{
+"s": "PJW",
+"n": "PANJAWATTANA PLASTIC",
+"mcap": 1146685696
+},
+{
+"s": "STP",
+"n": "SAHATHAI PRINTING",
+"mcap": 1140000000
+},
+{
+"s": "SUTHA",
+"n": "GOLDEN LIME",
+"mcap": 1137914240
+},
+{
+"s": "JPARK",
+"n": "JENKONGKLAI",
+"mcap": 1136000000
+},
+{
+"s": "JCT",
+"n": "JACK CHIA INDUSTRIES",
+"mcap": 1134000000
+},
+{
+"s": "HL",
+"n": "HEALTHLEAD",
+"mcap": 1120066688
+},
+{
+"s": "BE8",
+"n": "BERYL 8 PLUS",
+"mcap": 1117072512
+},
+{
+"s": "TPCS",
+"n": "TPCS",
+"mcap": 1112400000
+},
+{
+"s": "CHAO",
+"n": "CHAOSUA FOODS INDUSTRY",
+"mcap": 1112399872
+},
+{
+"s": "AMARC",
+"n": "ASIA MEDICAL AND",
+"mcap": 1104000000
+},
+{
+"s": "J",
+"n": "JAS ASSET",
+"mcap": 1095548416
+},
+{
+"s": "CH",
+"n": "CHIN HUAY",
+"mcap": 1088000000
+},
+{
+"s": "SPREME",
+"n": "SUPREME DISTRIBUTION",
+"mcap": 1087800064
+},
+{
+"s": "CSS",
+"n": "COMMUNICATION AND SYSTEM",
+"mcap": 1081680000
+},
+{
+"s": "MONO",
+"n": "MONO NEXT",
+"mcap": 1076026752
+},
+{
+"s": "SONIC",
+"n": "SONIC INTERFREIGHT",
+"mcap": 1075931392
+},
+{
+"s": "PROUD",
+"n": "PROUD REAL ESTATE",
+"mcap": 1061675328
+},
+{
+"s": "BIG",
+"n": "BIG CAMERA CORPORATION",
+"mcap": 1058663680
+},
+{
+"s": "BROCK",
+"n": "BAAN ROCK GARDEN",
+"mcap": 1055750144
+},
+{
+"s": "GPI",
+"n": "GRAND PRIX INTERNATIONAL",
+"mcap": 1050000000
+},
+{
+"s": "SVT",
+"n": "SUN VENDING TECHNOLOGY",
+"mcap": 1050000000
+},
+{
+"s": "PREB",
+"n": "PRE-BUILT",
+"mcap": 1043326400
+},
+{
+"s": "NAT",
+"n": "NAT ABSOLUTE TECHNOLOGIES",
+"mcap": 1038772032
+},
+{
+"s": "SDC",
+"n": "SAMART DIGITAL",
+"mcap": 1035491072
+},
+{
+"s": "CHOW",
+"n": "CHOW BRIGHT VENTURES",
+"mcap": 1016000000
+},
+{
+"s": "D",
+"n": "DENTAL CORPORATION",
+"mcap": 1012898944
+},
+{
+"s": "PRI",
+"n": "PRIMO SERVICE SOLUTIONS",
+"mcap": 1011200000
+},
+{
+"s": "AMC",
+"n": "ASIA METAL",
+"mcap": 1008202176
+},
+{
+"s": "ZAA",
+"n": "ZALEKTA",
+"mcap": 1001091712
+},
+{
+"s": "FMT",
+"n": "FINE METAL TECHNOLOGIES",
+"mcap": 993600064
+},
+{
+"s": "AS",
+"n": "ASPHERE INNOVATIONS",
+"mcap": 993501056
+},
+{
+"s": "ORN",
+"n": "ORNSIRIN HOLDING",
+"mcap": 990000064
+},
+{
+"s": "PDG",
+"n": "PRODIGY",
+"mcap": 986039744
+},
+{
+"s": "TYCN",
+"n": "TYCOONS WORLDWIDE GROUP",
+"mcap": 984635712
+},
+{
+"s": "STARM",
+"n": "STAR MONEY",
+"mcap": 979000000
+},
+{
+"s": "SINO",
+"n": "SINO LOGISTICS CORPORATION",
+"mcap": 977600000
+},
+{
+"s": "MIDA",
+"n": "MIDA ASSETS",
+"mcap": 976598272
+},
+{
+"s": "IFS",
+"n": "IFS CAPITAL (THAILAND)",
+"mcap": 972194944
+},
+{
+"s": "EP",
+"n": "EASTERN POWER GROUP",
+"mcap": 969807296
+},
+{
+"s": "MADAME",
+"n": "MADAME BIOSCIENCE",
+"mcap": 969370624
+},
+{
+"s": "KIAT",
+"n": "KIATTANA TRANSPORT",
+"mcap": 965249536
+},
+{
+"s": "SENX",
+"n": "SEN X",
+"mcap": 963080192
+},
+{
+"s": "PDJ",
+"n": "PRANDA JEWELRY",
+"mcap": 960544576
+},
+{
+"s": "FSX",
+"n": "FINANSIA X",
+"mcap": 956975488
+},
+{
+"s": "CPT",
+"n": "CPT DRIVES AND POWER",
+"mcap": 953999936
+},
+{
+"s": "CHASE",
+"n": "CHASE ASIA",
+"mcap": 953416128
+},
+{
+"s": "TMILL",
+"n": "T S FLOUR MILL",
+"mcap": 940847168
+},
+{
+"s": "APP",
+"n": "APPLICAD",
+"mcap": 940800000
+},
+{
+"s": "SORKON",
+"n": "S. KHONKAEN FOODS",
+"mcap": 938298880
+},
+{
+"s": "VL",
+"n": "V.L. ENTERPRISE",
+"mcap": 935064960
+},
+{
+"s": "SSTRT",
+"n": "SUB SRI THAI REAL ESTATE",
+"mcap": 916958336
+},
+{
+"s": "STI",
+"n": "STONEHENGE INTER",
+"mcap": 916555520
+},
+{
+"s": "WIIK",
+"n": "WIIK",
+"mcap": 913075008
+},
+{
+"s": "MPJ",
+"n": "MPJ LOGISTICS",
+"mcap": 912000000
+},
+{
+"s": "NTSC",
+"n": "NUTRITION SC",
+"mcap": 906664512
+},
+{
+"s": "BM",
+"n": "BANGKOK SHEET METAL",
+"mcap": 899515456
+},
+{
+"s": "TIPAK",
+"n": "THAI PACKAGING INDUSTRY",
+"mcap": 866640000
+},
+{
+"s": "PMTA",
+"n": "PM THORESEN ASIA HOLDINGS",
+"mcap": 865260032
+},
+{
+"s": "PATO",
+"n": "PATO CHEMICAL INDUSTRY",
+"mcap": 861350656
+},
+{
+"s": "MITSIB",
+"n": "MITSIB LEASING",
+"mcap": 851036096
+},
+{
+"s": "RSP",
+"n": "RICH SPORT",
+"mcap": 847019968
+},
+{
+"s": "IROYAL",
+"n": "INTERROYAL ENGINEERING",
+"mcap": 846400000
+},
+{
+"s": "FTI",
+"n": "FUNCTION INTERNATIONAL",
+"mcap": 841500032
+},
+{
+"s": "MGT",
+"n": "MEGACHEM (THAILAND)",
+"mcap": 839999936
+},
+{
+"s": "KUMWEL",
+"n": "KUMWELL CORPORATION",
+"mcap": 838500032
+},
+{
+"s": "SIRIPRT",
+"n": "SIRIPINYO REAL ESTATE",
+"mcap": 833000000
+},
+{
+"s": "THE",
+"n": "THE STEEL",
+"mcap": 826546048
+},
+{
+"s": "BIOTEC",
+"n": "BIO GREEN ENERGY TECH",
+"mcap": 824407808
+},
+{
+"s": "APCS",
+"n": "ASIA PRECISION",
+"mcap": 818399936
+},
+{
+"s": "PIMO",
+"n": "PIONEER MOTOR",
+"mcap": 818385792
+},
+{
+"s": "TRUBB",
+"n": "THAI RUBBER LATEX GROUP",
+"mcap": 815272768
+},
+{
+"s": "MK",
+"n": "M.K. REAL ESTATE DEVELOPMENT",
+"mcap": 811798464
+},
+{
+"s": "BEAUTY",
+"n": "BEAUTY COMMUNITY",
+"mcap": 808432256
+},
+{
+"s": "MTW",
+"n": "MAKE TO WIN HOLDING",
+"mcap": 800126272
+},
+{
+"s": "NKI",
+"n": "THE NAVAKIJ INSURANCE",
+"mcap": 799992128
+},
+{
+"s": "JSP",
+"n": "JSP PHARMACEUTICAL",
+"mcap": 797285888
+},
+{
+"s": "AMANAH",
+"n": "AMANAH LEASING",
+"mcap": 793361664
+},
+{
+"s": "PQS",
+"n": "PREMIER QUALITY STARCH",
+"mcap": 790599936
+},
+{
+"s": "TPL",
+"n": "THAI PARCELS",
+"mcap": 788241472
+},
+{
+"s": "PEACE",
+"n": "PEACE & LIVING",
+"mcap": 786236352
+},
+{
+"s": "PPM",
+"n": "PORN PROM METAL",
+"mcap": 784921344
+},
+{
+"s": "ADB",
+"n": "APPLIED DB",
+"mcap": 776819968
+},
+{
+"s": "TLHPF",
+"n": "THAILAND HOSPITALITY",
+"mcap": null
+},
+{
+"s": "TOPP",
+"n": "THAI O.P.P.",
+"mcap": 771000000
+},
+{
+"s": "NDR",
+"n": "N.D. RUBBER",
+"mcap": 767577920
+},
+{
+"s": "PL",
+"n": "PHATRA LEASING",
+"mcap": 757567488
+},
+{
+"s": "DCON",
+"n": "DCON PRODUCTS",
+"mcap": 754087680
+},
+{
+"s": "UBA",
+"n": "UTILITY BUSINESS ALLIANCE",
+"mcap": 750000000
+},
+{
+"s": "GTB",
+"n": "GETABEC",
+"mcap": 748800000
+},
+{
+"s": "CCP",
+"n": "CHONBURI CONCRETE PRODUCT",
+"mcap": 747368192
+},
+{
+"s": "SALEE",
+"n": "SALEE INDUSTRY",
+"mcap": 745037248
+},
+{
+"s": "MOONG",
+"n": "MOONG PATTANA",
+"mcap": 744666880
+},
+{
+"s": "IMH",
+"n": "INTERMEDICAL CARE AND LAB",
+"mcap": 744187648
+},
+{
+"s": "THREL",
+"n": "THAIRE LIFE ASSURANCE",
+"mcap": 744000000
+},
+{
+"s": "CGD",
+"n": "COUNTRY GROUP DEVELOPMENT",
+"mcap": 743951616
+},
+{
+"s": "JCK",
+"n": "JCK INTERNATIONAL",
+"mcap": 722521984
+},
+{
+"s": "88TH",
+"n": "88(THAILAND)",
+"mcap": 718250048
+},
+{
+"s": "SIMAT",
+"n": "SIMAT TECHNOLOGIES",
+"mcap": 713421056
+},
+{
+"s": "IHL",
+"n": "INTERHIDES",
+"mcap": 711366784
+},
+{
+"s": "TIF1",
+"n": "THAI INDUSTRIAL FUND 1",
+"mcap": 711000000
+},
+{
+"s": "ABM",
+"n": "ASIA BIOMASS",
+"mcap": 705962816
+},
+{
+"s": "BIS",
+"n": "BIOSCIENCE ANIMAL HEALTH",
+"mcap": 703360000
+},
+{
+"s": "MUD",
+"n": "MUD & HOUND",
+"mcap": 695235264
+},
+{
+"s": "UMI",
+"n": "THE UNION MOSAIC INDUSTRY",
+"mcap": 694298944
+},
+{
+"s": "AJA",
+"n": "AJ ADVANCE TECHNOLOGY",
+"mcap": 689185472
+},
+{
+"s": "GBX",
+"n": "GLOBLEX HOLDING MANAGEMENT",
+"mcap": 686118080
+},
+{
+"s": "ZIGA",
+"n": "ZIGA INNOVATION",
+"mcap": 685715456
+},
+{
+"s": "BVG",
+"n": "BLUEVENTURE GROUP",
+"mcap": 684000000
+},
+{
+"s": "BUI",
+"n": "BANGKOK UNION INSURANCE",
+"mcap": 680593600
+},
+{
+"s": "FVC",
+"n": "FILTER VISION",
+"mcap": 679170880
+},
+{
+"s": "TFI",
+"n": "THAI FUTURE INCORPORATION",
+"mcap": 673048960
+},
+{
+"s": "GREEN",
+"n": "GREEN RESOURCES",
+"mcap": 670780224
+},
+{
+"s": "PLUS",
+"n": "ROYAL PLUS",
+"mcap": 670000000
+},
+{
+"s": "SFT",
+"n": "SHRINKFLEX (THAILAND)",
+"mcap": 664400000
+},
+{
+"s": "PHOL",
+"n": "PHOL DHANYA",
+"mcap": 664200704
+},
+{
+"s": "CAZ",
+"n": "CAZ (THAILAND)",
+"mcap": 662046144
+},
+{
+"s": "F&D",
+"n": "FOOD AND DRINKS",
+"mcap": null
+},
+{
+"s": "ALLA",
+"n": "ALLA",
+"mcap": 660000000
+},
+{
+"s": "TRITN",
+"n": "TRITON HOLDING",
+"mcap": 656903680
+},
+{
+"s": "MGI",
+"n": "MISS GRAND INTERNATIONAL",
+"mcap": 655543744
+},
+{
+"s": "BSBM",
+"n": "BANGSAPHAN BARMILL",
+"mcap": 650281536
+},
+{
+"s": "MORE",
+"n": "MORE RETURN",
+"mcap": 645907392
+},
+{
+"s": "EASON",
+"n": "EASON & CO",
+"mcap": 644964416
+},
+{
+"s": "NOVA",
+"n": "NOVA EMPIRE",
+"mcap": 644771712
+},
+{
+"s": "UP",
+"n": "UNION PLASTIC",
+"mcap": 643750016
+},
+{
+"s": "GAHREIT",
+"n": "GRANDE HOSPITALITY REAL",
+"mcap": 635309952
+},
+{
+"s": "PG",
+"n": "PEOPLE'S GARMENT",
+"mcap": 628800000
+},
+{
+"s": "AF",
+"n": "AIRA FACTORING",
+"mcap": 624000000
+},
+{
+"s": "PRAKIT",
+"n": "PRAKIT HOLDINGS",
+"mcap": 604502656
+},
+{
+"s": "PHAT",
+"n": "PHATRA GROUP",
+"mcap": 603432448
+},
+{
+"s": "UREKA",
+"n": "EUREKA DESIGN",
+"mcap": 602310656
+},
+{
+"s": "CIVIL",
+"n": "CIVIL ENGINEERING",
+"mcap": 595000000
+},
+{
+"s": "WINDOW",
+"n": "WINDOW ASIA",
+"mcap": 594960000
+},
+{
+"s": "ADD",
+"n": "ADDTECH HUB",
+"mcap": 594720000
+},
+{
+"s": "SMART",
+"n": "SMART CONCRETE",
+"mcap": 0
+},
+{
+"s": "QHOP",
+"n": "QUALITY HOSPITALITY",
+"mcap": 585377984
+},
+{
+"s": "WARRIX",
+"n": "WARRIX SPORT",
+"mcap": 583189184
+},
+{
+"s": "OCC",
+"n": "O.C.C.",
+"mcap": 582000000
+},
+{
+"s": "MATI",
+"n": "MATICHON",
+"mcap": 574582528
+},
+{
+"s": "COLOUR",
+"n": "SALEE COLOUR",
+"mcap": 571296128
+},
+{
+"s": "AQUA",
+"n": "AQUA CORPORATION",
+"mcap": 571245760
+},
+{
+"s": "KOOL",
+"n": "CL VENTURE",
+"mcap": 562499968
+},
+{
+"s": "SCI",
+"n": "SCI ELECTRIC",
+"mcap": 562499968
+},
+{
+"s": "NUT",
+"n": "NUTRITION PROFESS",
+"mcap": 560582848
+},
+{
+"s": "CM",
+"n": "CHIANGMAI FROZEN FOODS",
+"mcap": 560284224
+},
+{
+"s": "LEO",
+"n": "LEO GLOBAL LOGISTICS",
+"mcap": 560000320
+},
+{
+"s": "APO",
+"n": "ASIAN PALM OIL",
+"mcap": 550800000
+},
+{
+"s": "RPC",
+"n": "RPCG",
+"mcap": 547958912
+},
+{
+"s": "SST",
+"n": "SUB SRI THAI",
+"mcap": 547514816
+},
+{
+"s": "MANRIN",
+"n": "THE MANDARIN HOTEL",
+"mcap": 546183232
+},
+{
+"s": "NATION",
+"n": "NATION GROUP (THAILAND)",
+"mcap": 530813632
+},
+{
+"s": "VARO",
+"n": "VAROPAKORN",
+"mcap": 529481248
+},
+{
+"s": "MENA",
+"n": "MENA TRANSPORT",
+"mcap": 528480032
+},
+{
+"s": "PORT",
+"n": "SAHATHAI TERMINAL",
+"mcap": 516122304
+},
+{
+"s": "QUICK",
+"n": "QUICK TRANSFORMATION",
+"mcap": 510000000
+},
+{
+"s": "SCN",
+"n": "SCAN INTER",
+"mcap": 509763232
+},
+{
+"s": "SE-ED",
+"n": "SE-EDUCATION",
+"mcap": 509527712
+},
+{
+"s": "ACC",
+"n": "ADVANCED CONNECTION",
+"mcap": 507690176
+},
+{
+"s": "CHOTI",
+"n": "KIANG HUAT SEA GULL",
+"mcap": 506249984
+},
+{
+"s": "INSURE",
+"n": "INDARA INSURANCE",
+"mcap": 504000000
+},
+{
+"s": "TEKA",
+"n": "TEKA CONSTRUCTION",
+"mcap": 504000000
+},
+{
+"s": "CFARM",
+"n": "CHUWIT FARM (2019)",
+"mcap": 498800000
+},
+{
+"s": "L&E",
+"n": "LIGHTING & EQUIPMENT",
+"mcap": null
+},
+{
+"s": "MASTEC",
+"n": "MASSTEC LINK",
+"mcap": 492000000
+},
+{
+"s": "SLP",
+"n": "SALEE PRINTING",
+"mcap": 492000000
+},
+{
+"s": "SSPF",
+"n": "SALA @ SATHORN PROPERTY",
+"mcap": null
+},
+{
+"s": "ISSARA",
+"n": "ISSARA REAL ESTATE",
+"mcap": 495537024
+},
+{
+"s": "PLT",
+"n": "PILATUS MARINE",
+"mcap": 489600000
+},
+{
+"s": "TRC",
+"n": "TRC CONSTRUCTION",
+"mcap": 489094176
+},
+{
+"s": "XBIO",
+"n": "X BIOSCIENCE",
+"mcap": 488627968
+},
+{
+"s": "SIAM",
+"n": "SIAM STEEL INTERNATIONAL",
+"mcap": 486363168
+},
+{
+"s": "NCH",
+"n": "N. C. HOUSING",
+"mcap": 485660640
+},
+{
+"s": "WINMED",
+"n": "WINNERGY MEDICAL",
+"mcap": 484000000
+},
+{
+"s": "WFX",
+"n": "WORLD FLEX",
+"mcap": 482767968
+},
+{
+"s": "K",
+"n": "KINGSMEN C.M.T.I.",
+"mcap": 479947968
+},
+{
+"s": "CPR",
+"n": "CPR GOMU INDUSTRIAL",
+"mcap": 473620032
+},
+{
+"s": "FLOYD",
+"n": "FLOYD",
+"mcap": 471109440
+},
+{
+"s": "TPP",
+"n": "THAI PACKAGING & PRINTING",
+"mcap": 468750016
+},
+{
+"s": "TNDT",
+"n": "THAI NONDESTRUCTIVE TESTIN",
+"mcap": 467527360
+},
+{
+"s": "TNITY",
+"n": "TRINITY WATTHANA",
+"mcap": 467402592
+},
+{
+"s": "RML",
+"n": "RAIMON LAND",
+"mcap": 463617664
+},
+{
+"s": "LTS",
+"n": "LIGHT UP TOTAL SOLUTION",
+"mcap": 460497984
+},
+{
+"s": "NEP",
+"n": "NEP REALTY AND INDUSTRY",
+"mcap": 441822304
+},
+{
+"s": "CWT",
+"n": "CHAI WATANA TANNERY GROUP",
+"mcap": 441221536
+},
+{
+"s": "GFC",
+"n": "GENESIS FERTILITY CENTER",
+"mcap": 437800000
+},
+{
+"s": "XYZ",
+"n": "RSXYZ",
+"mcap": 436684896
+},
+{
+"s": "THANA",
+"n": "THANASIRI GROUP",
+"mcap": 432705632
+},
+{
+"s": "ACG",
+"n": "AUTOCORP HOLDING",
+"mcap": 432000032
+},
+{
+"s": "CPH",
+"n": "CASTLE PEAK HOLDINGS",
+"mcap": 432000000
+},
+{
+"s": "RWI",
+"n": "RAYONG WIRE INDUSTRIES",
+"mcap": 430180224
+},
+{
+"s": "SAMCO",
+"n": "SAMMAKORN",
+"mcap": 430006304
+},
+{
+"s": "M-STOR",
+"n": "MFC-STRATEGIC STORAGE",
+"mcap": null
+},
+{
+"s": "YONG",
+"n": "YONG CONCRETE",
+"mcap": 421600000
+},
+{
+"s": "STC",
+"n": "STC CONCRETE PRODUCT",
+"mcap": 420320000
+},
+{
+"s": "SPACK",
+"n": "S. PACK & PRINT",
+"mcap": 420000000
+},
+{
+"s": "CMC",
+"n": "CHAOPRAYAMAHANAKORN",
+"mcap": 418840992
+},
+{
+"s": "RT",
+"n": "RIGHT TUNNELLING",
+"mcap": 413659584
+},
+{
+"s": "FN",
+"n": "FN FACTORY OUTLET",
+"mcap": 410000000
+},
+{
+"s": "KUN",
+"n": "VILLA KUNALAI",
+"mcap": 409692128
+},
+{
+"s": "TH",
+"n": "TONG HUA HOLDING",
+"mcap": 409321792
+},
+{
+"s": "AIMCG",
+"n": "AIM COMMERCIAL GROWTH",
+"mcap": 408960000
+},
+{
+"s": "HANN",
+"n": "MUKDAHAN INTERNATIONAL",
+"mcap": 408800000
+},
+{
+"s": "EFORL",
+"n": "E FOR L AIM",
+"mcap": 399847744
+},
+{
+"s": "QTCG",
+"n": "QTCG",
+"mcap": 399236384
+},
+{
+"s": "PAF",
+"n": "PAN ASIA FOOTWEAR",
+"mcap": 394200000
+},
+{
+"s": "SRS",
+"n": "SIRISOFT",
+"mcap": 393600000
+},
+{
+"s": "WAVE",
+"n": "WAVE EXPONENTIAL",
+"mcap": 392221440
+},
+{
+"s": "SCL",
+"n": "S.C.L. MOTOR PART",
+"mcap": 391548160
+},
+{
+"s": "DEXON",
+"n": "DEXON TECHNOLOGY",
+"mcap": 390729984
+},
+{
+"s": "MBAX",
+"n": "MULTIBAX",
+"mcap": 389604064
+},
+{
+"s": "TATG",
+"n": "THAI AUTO TOOLS AND DIE",
+"mcap": 388000000
+},
+{
+"s": "UEC",
+"n": "UNIMIT ENGINEERING",
+"mcap": 382242112
+},
+{
+"s": "NV",
+"n": "NOVA ORGANIC",
+"mcap": 380149536
+},
+{
+"s": "WGE",
+"n": "WELL GRADED ENGINEERING",
+"mcap": 378000000
+},
+{
+"s": "CEN",
+"n": "CAPITAL ENGINEERING NETWORK",
+"mcap": 372581312
+},
+{
+"s": "ASIMAR",
+"n": "ASIAN MARINE SERVICES",
+"mcap": 371939168
+},
+{
+"s": "PMC",
+"n": "PMC LABEL MATERIALS",
+"mcap": 369933376
+},
+{
+"s": "CHIC",
+"n": "CHIC REPUBLIC",
+"mcap": 367200000
+},
+{
+"s": "UBIS",
+"n": "UBIS (ASIA)",
+"mcap": 364800000
+},
+{
+"s": "KTMS",
+"n": "KT MEDICAL SERVICE",
+"mcap": 363000000
+},
+{
+"s": "TCC",
+"n": "THAI CAPITAL CORPORATION",
+"mcap": 362843040
+},
+{
+"s": "AE",
+"n": "ALL ENERGY & UTILITIES",
+"mcap": 360015008
+},
+{
+"s": "TBSP",
+"n": "TBSP",
+"mcap": 359970016
+},
+{
+"s": "KPNREIT",
+"n": "KPN FREEHOLD",
+"mcap": 358200000
+},
+{
+"s": "ITNS",
+"n": "INTERNATIONAL NETWORK",
+"mcap": 357390016
+},
+{
+"s": "TERA",
+"n": "TERABYTE PLUS",
+"mcap": 355200000
+},
+{
+"s": "KWM",
+"n": "K. W. METAL WORK",
+"mcap": 351752768
+},
+{
+"s": "READY",
+"n": "READYPLANET",
+"mcap": 350399936
+},
+{
+"s": "TBN",
+"n": "TBN CORPORATION",
+"mcap": 348000000
+},
+{
+"s": "CSP",
+"n": "CSP STEEL CENTER",
+"mcap": 347318176
+},
+{
+"s": "PRAPAT",
+"n": "PEERAPAT TECHNOLOGY",
+"mcap": 346562432
+},
+{
+"s": "TWP",
+"n": "THAI WIRE PRODUCTS",
+"mcap": 341700736
+},
+{
+"s": "ETE",
+"n": "EASTERN TECHNICAL",
+"mcap": 341600000
+},
+{
+"s": "CI",
+"n": "CHARN ISSARA DEVELOPMENT",
+"mcap": 341394144
+},
+{
+"s": "SOLAR",
+"n": "SOLARTRON",
+"mcap": 339851392
+},
+{
+"s": "CEYE",
+"n": "CHAMNI'S EYE",
+"mcap": 339253248
+},
+{
+"s": "TRV",
+"n": "T.R.V. RUBBER PRODUCTS",
+"mcap": 336000000
+},
+{
+"s": "TPCH",
+"n": "TPC POWER HOLDING",
+"mcap": 332996000
+},
+{
+"s": "GENCO",
+"n": "GENERAL ENVIRONMENTAL",
+"mcap": 332612672
+},
+{
+"s": "VPO",
+"n": "VICHITBHAN PALMOIL",
+"mcap": 329000000
+},
+{
+"s": "SMD100",
+"n": "SMD RISE",
+"mcap": 324017152
+},
+{
+"s": "TPA",
+"n": "THAI POLY ACRYLIC",
+"mcap": 323190016
+},
+{
+"s": "TMI",
+"n": "TEERA-MONGKOL INDUSTRY",
+"mcap": 322292480
+},
+{
+"s": "FLE",
+"n": "FRONTLINE ENGINEERING",
+"mcap": 321000000
+},
+{
+"s": "TWZ",
+"n": "TWZ CORPORATION",
+"mcap": 198609120
+},
+{
+"s": "SANKO",
+"n": "SANKO DIECASTING",
+"mcap": 316662240
+},
+{
+"s": "NRF",
+"n": "NR INSTANT PRODUCE",
+"mcap": 315803744
+},
+{
+"s": "TAKUNI",
+"n": "TAKUNI GROUP",
+"mcap": 312000096
+},
+{
+"s": "TMC",
+"n": "T.M.C. INDUSTRIAL",
+"mcap": 311984000
+},
+{
+"s": "NL",
+"n": "NL DEVELOPMENT",
+"mcap": 310000000
+},
+{
+"s": "TM",
+"n": "TECHNO MEDICAL",
+"mcap": 308000192
+},
+{
+"s": "RS",
+"n": "RS",
+"mcap": 305510560
+},
+{
+"s": "LIT",
+"n": "LEASE IT",
+"mcap": 301193248
+},
+{
+"s": "ITTHI",
+"n": "ITTHIRIT NICE CORPORATION",
+"mcap": 299922016
+},
+{
+"s": "TNPC",
+"n": "THAI NAM PLASTIC",
+"mcap": 299916256
+},
+{
+"s": "UNIX",
+"n": "UNIQUE PLASTIC INDUSTRY",
+"mcap": 299520000
+},
+{
+"s": "SEI",
+"n": "SEI MEDICAL",
+"mcap": 299200000
+},
+{
+"s": "MATCH",
+"n": "MATCHING MAXIMIZE SOLUTIO",
+"mcap": 297018912
+},
+{
+"s": "PLANET",
+"n": "PLANET COMMUNICATIONS",
+"mcap": 296680096
+},
+{
+"s": "SR",
+"n": "SIAMRAJ",
+"mcap": 290981024
+},
+{
+"s": "BC",
+"n": "BOUTIQUE CORPORATION",
+"mcap": 290817920
+},
+{
+"s": "PPPM",
+"n": "PP PRIME",
+"mcap": 290050784
+},
+{
+"s": "TCJ",
+"n": "T.C.J. ASIA",
+"mcap": 287222048
+},
+{
+"s": "CPL",
+"n": "CPL GROUP",
+"mcap": 285898784
+},
+{
+"s": "SE",
+"n": "SIAMEAST SOLUTIONS",
+"mcap": 285369120
+},
+{
+"s": "IND",
+"n": "INDEX INTERNATIONAL GROUP",
+"mcap": 283500000
+},
+{
+"s": "DOD",
+"n": "DOD BIOTECH",
+"mcap": 279256864
+},
+{
+"s": "AKP",
+"n": "AKKHIE PRAKARN",
+"mcap": 278760000
+},
+{
+"s": "MCA",
+"n": "MARKET CONNECTIONS ASIA",
+"mcap": 276000000
+},
+{
+"s": "PROEN",
+"n": "PROEN CORP",
+"mcap": 274807008
+},
+{
+"s": "I2",
+"n": "I2 ENTERPRISE",
+"mcap": 273000000
+},
+{
+"s": "TPLAS",
+"n": "THAI PLASTIC INDUSTRIAL",
+"mcap": 272700000
+},
+{
+"s": "MNIT",
+"n": "MFC-NICHADA THANI PROPERTY",
+"mcap": 267720000
+},
+{
+"s": "GTV",
+"n": "GREEN TECH VENTURES",
+"mcap": 262619104
+},
+{
+"s": "RICHY",
+"n": "RICHY PLACE 2002",
+"mcap": 260531648
+},
+{
+"s": "MOTHER",
+"n": "MOTHER MARKETING",
+"mcap": 260260000
+},
+{
+"s": "NC",
+"n": "NEWCITY (BANGKOK)",
+"mcap": 259249840
+},
+{
+"s": "JAK",
+"n": "JAKPAISAN ESTATE",
+"mcap": 259200000
+},
+{
+"s": "GEL",
+"n": "GENERAL ENGINEERING",
+"mcap": 258361456
+},
+{
+"s": "DHOUSE",
+"n": "DHOUSE PATTANA",
+"mcap": 253866672
+},
+{
+"s": "TCOAT",
+"n": "THAI COATING INDUSTRIAL",
+"mcap": 253050000
+},
+{
+"s": "CMO",
+"n": "CMO",
+"mcap": 251443152
+},
+{
+"s": "EMC",
+"n": "EMC",
+"mcap": 251412656
+},
+{
+"s": "IVF",
+"n": "INSPIRE IVF",
+"mcap": 250800448
+},
+{
+"s": "VIBE",
+"n": "VIBE SYNERGY GROUP",
+"mcap": 246456224
+},
+{
+"s": "CHARAN",
+"n": "CHARAN INSURANCE",
+"mcap": 246000000
+},
+{
+"s": "SK",
+"n": "SIRAKORN",
+"mcap": 243799984
+},
+{
+"s": "EVER",
+"n": "EVERLAND",
+"mcap": 242739328
+},
+{
+"s": "B",
+"n": "BEGISTICS",
+"mcap": 242220272
+},
+{
+"s": "MJD",
+"n": "MAJOR DEVELOPMENT",
+"mcap": 240915360
+},
+{
+"s": "BPS",
+"n": "BPS TECHNOLOGY",
+"mcap": 240000016
+},
+{
+"s": "ARIN",
+"n": "ARINSIRI LAND",
+"mcap": 240000000
+},
+{
+"s": "ETL",
+"n": "EUROASIA TOTAL LOGISTICS",
+"mcap": 235600000
+},
+{
+"s": "ONSENS",
+"n": "ONSEN RETREAT AND SPA",
+"mcap": 233999984
+},
+{
+"s": "MNRF",
+"n": "MULTI-NATIONAL RESIDENCE",
+"mcap": null
+},
+{
+"s": "FNS",
+"n": "FNS HOLDINGS",
+"mcap": 225292976
+},
+{
+"s": "AMR",
+"n": "AMR ASIA",
+"mcap": 224469808
+},
+{
+"s": "PANEL",
+"n": "PANELESMATIC SOLUTIONS",
+"mcap": 224199984
+},
+{
+"s": "PTC",
+"n": "PREMIER TANK CORPORATION",
+"mcap": 221400016
+},
+{
+"s": "KK",
+"n": "K&K SUPERSTORE SOUTHERN",
+"mcap": 217349968
+},
+{
+"s": "TIGER",
+"n": "THAI ENGER HOLDING",
+"mcap": 216200000
+},
+{
+"s": "CRD",
+"n": "CHIANGMAI RIMDOI",
+"mcap": 215000000
+},
+{
+"s": "TKT",
+"n": "T.KRUNGTHAI INDUSTRIES",
+"mcap": 213975808
+},
+{
+"s": "PK",
+"n": "PATKOL",
+"mcap": 213510080
+},
+{
+"s": "STX",
+"n": "STONE ONE",
+"mcap": 211922864
+},
+{
+"s": "ROCK",
+"n": "ROCKWORTH",
+"mcap": 210000000
+},
+{
+"s": "TCMC",
+"n": "TCM CORPORATION",
+"mcap": 206064320
+},
+{
+"s": "CPANEL",
+"n": "CPANEL",
+"mcap": 203973216
+},
+{
+"s": "SKE",
+"n": "SAKOL ENERGY",
+"mcap": 200880352
+},
+{
+"s": "SGF",
+"n": "SGF CAPITAL",
+"mcap": 196500000
+},
+{
+"s": "GLORY",
+"n": "GLORY FOREVER",
+"mcap": 192042992
+},
+{
+"s": "PERM",
+"n": "PERMSIN STEEL WORKS",
+"mcap": 191664672
+},
+{
+"s": "TGPRO",
+"n": "THAI-GERMAN PRODUCTS",
+"mcap": 188778384
+},
+{
+"s": "ARIP",
+"n": "ARIP",
+"mcap": 186400000
+},
+{
+"s": "PPP",
+"n": "PREMIER PRODUCTS",
+"mcap": 186000000
+},
+{
+"s": "BLESS",
+"n": "BLESS ASSET GROUP",
+"mcap": 184000000
+},
+{
+"s": "SQ",
+"n": "SAHAKOL EQUIPMENT",
+"mcap": 183865584
+},
+{
+"s": "CITY",
+"n": "CITY STEEL",
+"mcap": 183000000
+},
+{
+"s": "B52",
+"n": "B-52 CAPITAL",
+"mcap": 181130448
+},
+{
+"s": "IRCP",
+"n": "INTERNATIONAL RESEARCH",
+"mcap": 180809600
+},
+{
+"s": "AFC",
+"n": "ASIA FIBER",
+"mcap": 177739632
+},
+{
+"s": "TVT",
+"n": "TV THUNDER",
+"mcap": 176006624
+},
+{
+"s": "CRANE",
+"n": "CHU KAI",
+"mcap": 174383248
+},
+{
+"s": "OGC",
+"n": "OCEAN GLASS",
+"mcap": 173845328
+},
+{
+"s": "PRIME",
+"n": "PRIME ROAD POWER",
+"mcap": 170179424
+},
+{
+"s": "ASN",
+"n": "ASN BROKER",
+"mcap": 168479952
+},
+{
+"s": "CHEWA",
+"n": "CHEWATHAI",
+"mcap": 165753744
+},
+{
+"s": "QLT",
+"n": "QUALITECH",
+"mcap": 164609376
+},
+{
+"s": "KCM",
+"n": "K.C. METALSHEET",
+"mcap": 163200000
+},
+{
+"s": "SVR",
+"n": "SIVAROM REAL ESTATE",
+"mcap": 163200000
+},
+{
+"s": "UPF",
+"n": "UNION PIONEER",
+"mcap": 161250000
+},
+{
+"s": "KASET",
+"n": "THAI HA",
+"mcap": 160513776
+},
+{
+"s": "NCP",
+"n": "NICE CALL",
+"mcap": 159407488
+},
+{
+"s": "IIG",
+"n": "I&I GROUP",
+"mcap": 155454528
+},
+{
+"s": "WIN",
+"n": "WYNCOAST INDUSTRIAL PARK",
+"mcap": 151508880
+},
+{
+"s": "TNPF",
+"n": "TRINITY FREEHOLD AND",
+"mcap": null
+},
+{
+"s": "GCAP",
+"n": "G CAPITAL",
+"mcap": 140893312
+},
+{
+"s": "HPT",
+"n": "HOME POTTERY",
+"mcap": 139036656
+},
+{
+"s": "PPS",
+"n": "PROJECT PLANNING SERVICE",
+"mcap": 137576816
+},
+{
+"s": "PEER",
+"n": "PEER FOR YOU",
+"mcap": 137140432
+},
+{
+"s": "BTNC",
+"n": "BOUTIQUE NEWCITY",
+"mcap": 136800000
+},
+{
+"s": "DIMET",
+"n": "DIMET (SIAM)",
+"mcap": 134550128
+},
+{
+"s": "PLE",
+"n": "POWER LINE ENGINEERING",
+"mcap": 132047720
+},
+{
+"s": "LDC",
+"n": "LDC DENTAL",
+"mcap": 132000000
+},
+{
+"s": "PRECHA",
+"n": "PREECHA GROUP",
+"mcap": 128831464
+},
+{
+"s": "IDG",
+"n": "INDIGY",
+"mcap": 127000000
+},
+{
+"s": "RP",
+"n": "RAJA FERRY PORT",
+"mcap": 126511320
+},
+{
+"s": "DTCI",
+"n": "D.T.C. INDUSTRIES",
+"mcap": 125000000
+},
+{
+"s": "THMUI",
+"n": "THAI MUI CORPORATION",
+"mcap": 123250000
+},
+{
+"s": "NPK",
+"n": "NEW PLUS KNITTING",
+"mcap": 123000000
+},
+{
+"s": "FANCY",
+"n": "FANCY WOOD INDUSTRIES",
+"mcap": 123000000
+},
+{
+"s": "META",
+"n": "META CORPORATION",
+"mcap": 122779632
+},
+{
+"s": "STOWER",
+"n": "SKY TOWER",
+"mcap": 121871256
+},
+{
+"s": "BTW",
+"n": "BT WEALTH INDUSTRIES",
+"mcap": 113400008
+},
+{
+"s": "SKIN",
+"n": "SKIN LABORATORY",
+"mcap": 112319992
+},
+{
+"s": "BSM",
+"n": "BUILDERSMART",
+"mcap": 110786320
+},
+{
+"s": "BGT",
+"n": "BGT CORPORATION",
+"mcap": 109055976
+},
+{
+"s": "SCM",
+"n": "SUCCESSMORE BEING",
+"mcap": 106355200
+},
+{
+"s": "KC",
+"n": "K.C. PROPERTY",
+"mcap": 103509736
+},
+{
+"s": "SAF",
+"n": "S.A.F. SPECIAL STEEL",
+"mcap": 102000000
+},
+{
+"s": "YGG",
+"n": "YGGDRAZIL GROUP",
+"mcap": 96319544
+},
+{
+"s": "PROS",
+"n": "PROSPER ENGINEERING",
+"mcap": 90000000
+},
+{
+"s": "EMPIRE",
+"n": "ORIGIN GLOBAL EMPIRE",
+"mcap": 81964992
+},
+{
+"s": "TSI",
+"n": "THE THAI SETAKIJ INSURANCE",
+"mcap": 76116552
+},
+{
+"s": "CIG",
+"n": "C.I.GROUP",
+"mcap": 74731552
+},
+{
+"s": "COMAN",
+"n": "COMANCHE INTERNATIONAL",
+"mcap": 73659368
+},
+{
+"s": "TVDH",
+"n": "TVD HOLDINGS",
+"mcap": 68342240
+},
+{
+"s": "VS",
+"n": "VISERVE ENTERPRISE",
+"mcap": 57500000
+},
+{
+"s": "TPOLY",
+"n": "THAI POLYCONS",
+"mcap": 51548356
+},
+{
+"s": "NCL",
+"n": "NCL INTERNATIONAL LOGISTICS",
+"mcap": 43154040
+},
+{
+"s": "DPAINT",
+"n": "DELTA PAINT",
+"mcap": 141956768
+},
+{
+"s": "QDC",
+"n": "QUANTUM D C",
+"mcap": 22314106
+},
+{
+"s": "HYDRO",
+"n": "HYDROTEK",
+"mcap": 15099181
+},
+{
+"s": "3BBIF",
+"n": "3BB INTERNET",
+"mcap": null
+},
+{
+"s": "BKA",
+"n": "BANGKOK ASSET INTERGROUP",
+"mcap": null
+},
+{
+"s": "BRRGIF",
+"n": "BURIRAM SUGAR GROUP POWE",
+"mcap": null
+},
+{
+"s": "BTSGIF",
+"n": "BTS RAIL MASS TRANSIT",
+"mcap": null
+},
+{
+"s": "CPTREIT",
+"n": "C.P. TOWER LEASEHOLD",
+"mcap": null
+},
+{
+"s": "DIF",
+"n": "DIGITAL TELECOMMUNICATIONS",
+"mcap": null
+},
+{
+"s": "EGATIF",
+"n": "NORTH BANGKOK POWER",
+"mcap": null
+},
+{
+"s": "KBSPIF",
+"n": "KHONBURI SUGAR POWER",
+"mcap": null
+},
+{
+"s": "MMM",
+"n": "MMM CAPITAL",
+"mcap": null
+},
+{
+"s": "MNIT2",
+"n": "NICHADA THANI PROPERTY",
+"mcap": null
+},
+{
+"s": "S&J",
+"n": "S & J INTERNATIONAL",
+"mcap": null
+},
+{
+"s": "SUPEREIF",
+"n": "SUPER ENERGY POWER",
+"mcap": null
+},
+{
+"s": "TFFIF",
+"n": "THAILAND FUTURE FUND",
+"mcap": null
+},
+{
+"s": "VAYU1",
+"n": "VAYUPAK FUND 1 CLASS A",
+"mcap": null
+}
+]

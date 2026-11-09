@@ -84,7 +84,7 @@ function lineChart({ dates, series, hlines = [], W = 380, H = 210, money = false
 }
 
 // ------------------------------------------------------------ เส้นทางหน้า
-const VIEWS = { scan: showScan, search: showSearch, stock: showStock, paper: showPaper, bt: showBt, set: showSet };
+const VIEWS = { scan: showScan, search: showSearch, stock: showStock, news: showNews, paper: showPaper, bt: showBt, set: showSet };
 function route() {
   const [name, arg] = (location.hash.slice(1) || "scan").split("/");
   const v = VIEWS[name] ? name : "scan";
@@ -97,7 +97,8 @@ function route() {
 window.addEventListener("hashchange", route);
 
 // ------------------------------------------------------------ หุ้นเด่น
-let scanList = store.get("list", "set"), scanFilter = store.get("filter", "ซื้อ"), scanData = null, scanBusy = false;
+let scanLimit = 80;
+let scanList = STATIC ? "set" : store.get("list", "set"), scanFilter = store.get("filter", "ซื้อ"), scanData = null, scanBusy = false;
 
 function regimeHtml(regimes) {
   return Object.entries(regimes || {}).map(([k, v]) => {
@@ -116,7 +117,11 @@ function renderScan() {
   rows.forEach(r => counts[r.status]++);
   $("#scan-filter").innerHTML = ["ซื้อ", "รอจังหวะ", "หลีกเลี่ยง", "ทั้งหมด"].map(f =>
     `<button class="chip ${f === scanFilter ? "on" : ""}" data-f="${f}">${f}<b>${f === "ทั้งหมด" ? rows.length : counts[f]}</b></button>`).join("");
-  const sel = scanFilter === "ทั้งหมด" ? rows : rows.filter(r => r.status === scanFilter);
+  const q = ($("#scan-q").value || "").trim().toUpperCase();
+  let sel = scanFilter === "ทั้งหมด" ? rows : rows.filter(r => r.status === scanFilter);
+  if (q) sel = rows.filter(r => r.ticker.includes(q) || (r.name || "").toUpperCase().includes(q));   // ค้นหาทุกสถานะ
+  const more = sel.length - scanLimit;
+  sel = sel.slice(0, scanLimit);
   if (!sel.length) {
     box.innerHTML = `<div class="empty">${scanFilter === "ซื้อ" ? "วันนี้ยังไม่มีหุ้นที่ผ่านทุกเงื่อนไข<br><span class='small'>การไม่ซื้อก็เป็นการตัดสินใจที่ดีได้ — ดูกลุ่ม \"รอจังหวะ\" แทน</span>" : "ไม่มีรายการ"}</div>`;
     return;
@@ -125,7 +130,7 @@ function renderScan() {
     <a class="item" href="#stock/${encodeURIComponent(r.symbol)}">
       <div class="main">
         <div class="tk">${esc(r.ticker)} <span class="badge ${BADGE[r.status]}">${r.status}</span></div>
-        <div class="nm">${esc(r.name || r.sector)}</div>
+        <div class="nm">${esc(r.name || r.sector)} · ซื้อขาย ${fmt(r.value20_m, r.value20_m < 10 ? 1 : 0)} ล้าน/วัน</div>
         <div class="how">${esc(r.how)}</div>
         ${r.signals.length ? `<div class="small up">● ${esc(r.signals.join(" · "))}</div>` : ""}
       </div>
@@ -135,7 +140,7 @@ function renderScan() {
         ${sparkline(r.spark)}
         <span class="score num">${fmt(r.score, 0)}</span>
       </div>
-    </a>`).join("");
+    </a>`).join("") + (more > 0 ? `<button class="btn block" id="scan-more">แสดงเพิ่ม (อีก ${more} ตัว)</button>` : "");
 }
 
 async function loadScan(force) {
@@ -165,8 +170,10 @@ $("#scan-list").addEventListener("click", e => {
 });
 $("#scan-filter").addEventListener("click", e => {
   const f = e.target.closest("[data-f]")?.dataset.f; if (!f) return;
-  scanFilter = f; store.set("filter", f); renderScan();
+  scanFilter = f; store.set("filter", f); scanLimit = 80; renderScan();
 });
+$("#scan-q").addEventListener("input", () => { scanLimit = 80; renderScan(); });
+$("#scan-rows").addEventListener("click", e => { if (e.target.id === "scan-more") { scanLimit += 150; renderScan(); } });
 $("#scan-refresh").addEventListener("click", () => { scanBusy = false; loadScan(true); toast(STATIC ? "กำลังโหลดข้อมูลล่าสุด…" : "กำลังโหลดราคาล่าสุด…"); });
 
 // ------------------------------------------------------------ ค้นหา
@@ -254,6 +261,7 @@ function renderStock(a) {
         ["จุดเบรกเอาต์", fmt(p.breakout_level)], ["โซนย่อซื้อ", `${fmt(p.pullback_zone[0])}–${fmt(p.pullback_zone[1])}`],
         ["มูลค่าซื้อขาย/วัน", fmt(r.value20_m, 0) + " ล้าน"],
       ])}</div>
+      ${r.symbol.endsWith(".BK") ? `<p class="small mut" style="margin:10px 0 0">ราคาปัดตามช่วงราคา (tick) ของตลาดแล้ว — ใช้ส่งคำสั่งใน Streaming ได้ทันที: ซื้อ Limit ${fmt(p.entry)} · ตั้ง Stop ${fmt(p.stop)} · ขายทำกำไร ${fmt(p.target)}</p>` : ""}
       <button class="btn primary block" id="paper-buy" style="margin-top:12px">ซื้อในพอร์ตจำลอง</button>
     </div>
     <div class="card"><h2>อินดิเคเตอร์</h2><div class="grid g3">${kv([
@@ -265,6 +273,7 @@ function renderStock(a) {
       ${fd.note ? `<p class="mut small">${esc(fd.note)}</p>` : `<div class="grid g3">${kv(Object.entries(fd).map(([k, v]) => [k, fmt(v, 2)]).concat(
         r.analyst_upside != null ? [["เป้านักวิเคราะห์", `<span class="${cls(r.analyst_upside)}">${pct(r.analyst_upside)}</span> <span class="small mut">${esc(r.analyst_rec || "")}</span>`]] : []))}</div>`}
     </div>
+    <div class="card" id="stock-news"><h2>ข่าวล่าสุดของ ${esc(r.ticker)}</h2><div class="status"><span class="loader"></span>กำลังโหลดข่าว…</div></div>
     ${btm ? `<div class="card"><h2>ถ้าใช้กลยุทธ์นี้กับหุ้นตัวนี้ในอดีต</h2>
       <p class="small mut">ตั้งแต่ ${esc(btm["เริ่ม"])} · ลงเต็มพอร์ตทุกไม้</p>
       <div class="grid">${kv([
@@ -273,6 +282,15 @@ function renderStock(a) {
         ["ขาดทุนสูงสุด (MaxDD)", pct(btm["ขาดทุนสูงสุดจากจุดสูงสุด(MaxDD)%"])], ["จำนวนเทรด / ชนะ", `${btm["จำนวนเทรด"] ?? 0} / ${btm["อัตราชนะ%"] ?? 0}%`],
       ])}</div></div>` : ""}
     <p class="small mut" style="text-align:center">ข้อมูล ณ ${new Date(a.time).toLocaleString("th-TH")} · ไม่ใช่คำแนะนำการลงทุน</p>`;
+  (async () => {
+    try {
+      if (!newsData) { const j = await api("api/news"); if (j.result) newsData = j.result; }
+      const items = (newsData?.items || []).filter(n => n.sym.includes(r.ticker)).slice(0, 12);
+      const box = $("#stock-news"); if (!box) return;
+      box.innerHTML = `<h2>ข่าวล่าสุดของ ${esc(r.ticker)} <span class="small mut">(${items.length})</span></h2>` +
+        (items.length ? newsHtml(items) : `<p class="mut small">ยังไม่พบข่าวที่พูดถึง ${esc(r.ticker)} ใน 7 วันที่ผ่านมา</p>`);
+    } catch { }
+  })();
   $("#range").addEventListener("click", e => {
     const v = +e.target.dataset.r; if (!v) return;
     chartRange = v; store.set("range", v);
@@ -285,6 +303,70 @@ function renderStock(a) {
     catch (err) { toast(err.message); b.disabled = false; b.textContent = "ซื้อในพอร์ตจำลอง"; }
   });
 }
+
+// ------------------------------------------------------------ ข่าว
+let newsData = null, newsFilter = store.get("newsf", "ทั้งหมด"), newsLimit = 60, newsBusy = false;
+function ago(iso) {
+  const m = Math.max(0, (Date.now() - new Date(iso)) / 60000);
+  return m < 60 ? `${Math.round(m)} นาทีที่แล้ว` : m < 1440 ? `${Math.round(m / 60)} ชม.ที่แล้ว` : `${Math.round(m / 1440)} วันที่แล้ว`;
+}
+function newsHtml(items) {
+  return items.map(n => `<div class="news">
+    <a class="nt" href="${esc(n.l)}" target="_blank" rel="noopener">${esc(n.t)}</a>
+    ${n.x ? `<div class="x">${esc(n.x)}</div>` : ""}
+    <div class="meta"><span class="sen ${n.sen > 0 ? "p" : n.sen < 0 ? "n" : "z"}" title="${n.sen > 0 ? "โทนบวก" : n.sen < 0 ? "โทนลบ" : "กลาง ๆ"}"></span>${esc(n.s)} · ${ago(n.d)}</div>
+    ${n.sym.length ? `<div class="tags">${n.sym.map(s => `<a class="tag" href="#stock/${encodeURIComponent(s)}">${esc(s)}</a>`).join("")}</div>` : ""}
+  </div>`).join("");
+}
+async function newsFocus(kind) {
+  if (kind === "หุ้นสัญญาณซื้อ" || kind === "หุ้นรอจังหวะ") {
+    if (!scanData) { const j = await api(`api/scan?list=set`); scanData = j.result; }
+    const st = kind === "หุ้นสัญญาณซื้อ" ? "ซื้อ" : "รอจังหวะ";
+    return new Set((scanData?.rows || []).filter(r => r.status === st).map(r => r.ticker));
+  }
+  if (kind === "พอร์ตจำลอง") {
+    const p = await api("api/paper?update=0");
+    return new Set(p.positions.map(x => x.ticker.replace(".BK", "")));
+  }
+  return null;
+}
+async function renderNews() {
+  if (!newsData) return;
+  const kinds = ["ทั้งหมด", "หุ้นสัญญาณซื้อ", "หุ้นรอจังหวะ", "พอร์ตจำลอง", "ระบุชื่อหุ้น", "ข่าวดี", "ข่าวร้าย"];
+  $("#news-filter").innerHTML = kinds.map(k => `<button class="chip ${k === newsFilter ? "on" : ""}" data-k="${k}">${k}</button>`).join("");
+  let items = newsData.items;
+  const focus = await newsFocus(newsFilter);
+  if (focus) items = items.filter(n => n.sym.some(s => focus.has(s)));
+  if (newsFilter === "ระบุชื่อหุ้น") items = items.filter(n => n.sym.length);
+  if (newsFilter === "ข่าวดี") items = items.filter(n => n.sen > 0);
+  if (newsFilter === "ข่าวร้าย") items = items.filter(n => n.sen < 0);
+  const q = ($("#news-q").value || "").trim();
+  if (q) { const Q = q.toUpperCase(); items = items.filter(n => n.sym.includes(Q) || n.t.toUpperCase().includes(Q)); }
+  const more = items.length - newsLimit;
+  $("#news-list").innerHTML = (items.length ? newsHtml(items.slice(0, newsLimit)) : `<div class="empty">ไม่มีข่าวตามเงื่อนไขนี้</div>`)
+    + (more > 0 ? `<button class="btn block" id="news-more">แสดงเพิ่ม (อีก ${more} ข่าว)</button>` : "");
+}
+async function showNews(_, force = false) {
+  if (newsBusy) return;
+  newsBusy = true; $("#news-refresh").classList.add("spin");
+  try {
+    await poll("api/news", j => {
+      const n = j.result?.items?.length || 0;
+      setStatus($("#news-status"), j, "กำลังรวบรวมข่าว");
+      if (j.state !== "running" && j.result) $("#news-status").textContent =
+        `${fmt(n, 0)} ข่าว ย้อนหลัง 7 วัน จาก ${Object.keys(j.result.sources || {}).length}+ แหล่ง · อัปเดต ${ago(j.result.time)}`;
+      if (j.result) { newsData = j.result; renderNews(); }
+    }, force ? "api/news?refresh=1" : "api/news");
+  } catch (e) { $("#news-status").innerHTML = `<span class="down">${esc(e.message)}</span>`; }
+  finally { newsBusy = false; $("#news-refresh").classList.remove("spin"); }
+}
+$("#news-refresh").addEventListener("click", () => showNews(null, true));
+$("#news-filter").addEventListener("click", e => {
+  const k = e.target.closest("[data-k]")?.dataset.k; if (!k) return;
+  newsFilter = k; store.set("newsf", k); newsLimit = 60; renderNews();
+});
+$("#news-q").addEventListener("input", () => { newsLimit = 60; renderNews(); });
+$("#news-list").addEventListener("click", e => { if (e.target.id === "news-more") { newsLimit += 100; renderNews(); } });
 
 // ------------------------------------------------------------ พอร์ตจำลอง
 async function showPaper(_, update = true) {
@@ -377,6 +459,7 @@ function renderBt(r) {
     <div class="card"><h2>เทรดล่าสุด</h2><table class="t"><tr><th>หุ้น</th><th>ช่วง</th><th class="r">ผล</th><th>เหตุผลขาย</th></tr>
       ${r.trades.map((t, k) => `<tr ${k >= 15 ? 'class="more" hidden' : ''}><td><b>${esc(t.ticker.replace(".BK", ""))}</b></td><td class="small">${esc(t.entry_date.slice(2))}<br>${esc(t.exit_date.slice(2))}</td>
         <td class="r ${cls(t.ret_pct)}">${pct(t.ret_pct)}</td><td class="small">${esc(t.reason)}</td></tr>`).join("")}</table>${r.trades.length > 15 ? `<button class="btn block" style="margin-top:8px" onclick="this.previousElementSibling.querySelectorAll('.more').forEach(x=>x.hidden=false);this.remove()">ดูเพิ่ม</button>` : ""}</div>
+    ${m["ผลตอบแทนรวม%"] < (m["ดัชนีอ้างอิง(ซื้อถือ)%"] ?? -1e9) ? `<p class="warn small"><b>ผลย้อนหลังของกลยุทธ์นี้แพ้การซื้อ ${bName} แล้วถือไว้เฉย ๆ</b> — ใช้เป็นเครื่องมือคัดกรองหุ้นและคุมความเสี่ยง ไม่ใช่ระบบทำกำไรอัตโนมัติ</p>` : ""}
     <p class="warn small">ทดสอบด้วยรายชื่อหุ้นปัจจุบัน (หุ้นที่เคยล้มหายไปไม่ถูกนับ) และใช้เฉพาะสัญญาณเทคนิค ผลจริงมักแย่กว่านี้</p>
     <button class="btn block" id="bt-rerun">คำนวณใหม่ด้วยข้อมูลล่าสุด</button>`;
   $("#bt-rerun").onclick = () => showBt(null, true);
