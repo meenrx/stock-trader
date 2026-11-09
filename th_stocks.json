@@ -305,14 +305,14 @@
 "mcap": 44717764608
 },
 {
-"s": "BTG",
-"n": "BETAGRO",
-"mcap": 42504912896
-},
-{
 "s": "GUNKUL",
 "n": "GUNKUL ENGINEERING",
 "mcap": 42636152832
+},
+{
+"s": "BTG",
+"n": "BETAGRO",
+"mcap": 42504912896
 },
 {
 "s": "FTREIT",
@@ -3765,11 +3765,6 @@
 "mcap": 321000000
 },
 {
-"s": "TWZ",
-"n": "TWZ CORPORATION",
-"mcap": 198609120
-},
-{
 "s": "SANKO",
 "n": "SANKO DIECASTING",
 "mcap": 316662240
@@ -4090,6 +4085,11 @@
 "mcap": 200880352
 },
 {
+"s": "TWZ",
+"n": "TWZ CORPORATION",
+"mcap": 198609120
+},
+{
 "s": "SGF",
 "n": "SGF CAPITAL",
 "mcap": 196500000
@@ -4223,6 +4223,11 @@
 "s": "TNPF",
 "n": "TRINITY FREEHOLD AND",
 "mcap": null
+},
+{
+"s": "DPAINT",
+"n": "DELTA PAINT",
+"mcap": 141956768
 },
 {
 "s": "GCAP",
@@ -4393,11 +4398,6 @@
 "s": "NCL",
 "n": "NCL INTERNATIONAL LOGISTICS",
 "mcap": 43154040
-},
-{
-"s": "DPAINT",
-"n": "DELTA PAINT",
-"mcap": 141956768
 },
 {
 "s": "QDC",
