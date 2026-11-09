@@ -1,0 +1,99 @@
+# ระบบอัตโนมัติ: อัปเดตเว็บทุกวันหลังตลาดปิด + บอท Telegram แจ้งจุดซื้อ/ขาย
+# เวลาใน cron เป็นเวลา UTC (ไทย = UTC+7) — GitHub อาจเริ่มช้ากว่ากำหนด 5-20 นาที
+name: stocktrader
+
+on:
+  schedule:
+    - cron: "*/30 3-9 * * 1-5"    # ระหว่างวันตลาดไทย 10:00-16:59 น.
+    - cron: "*/30 14-20 * * 1-5"  # ระหว่างวันตลาดอเมริกา 21:00-03:59 น.
+    - cron: "45 10 * * 1-5"       # สรุปหุ้นไทย 17:45 น.
+    - cron: "30 21 * * 1-5"       # สรุปหุ้นอเมริกา 04:30 น.
+    - cron: "15 */3 * * *"        # รับคำสั่งบอทนอกเวลาตลาด
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "งานที่จะรัน"
+        type: choice
+        default: daily-set
+        options: [daily-set, daily-us, intraday, commands]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: stocktrader
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    outputs:
+      build: ${{ steps.mode.outputs.build }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - id: mode
+        run: |
+          S="${{ github.event.schedule }}"
+          M="${{ inputs.mode }}"
+          case "$S" in
+            "45 10 * * 1-5") M=daily-set ;;
+            "30 21 * * 1-5") M=daily-us ;;
+            "15 */3 * * *")  M=commands ;;
+            "")              ;;
+            *)               M=intraday ;;
+          esac
+          [ -z "$M" ] && M=commands
+          echo "mode=$M" >> "$GITHUB_OUTPUT"
+          case "$M" in daily-*) echo "build=1" >> "$GITHUB_OUTPUT" ;; esac
+          echo "mode: $M"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Build website
+        if: steps.mode.outputs.build == '1'
+        env:
+          TELEGRAM_BOT_USERNAME: ${{ vars.TELEGRAM_BOT_USERNAME }}
+        run: python build_site.py
+
+      - name: Telegram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          STATE_KEY: ${{ secrets.STATE_KEY }}
+          SITE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
+        run: python notify.py ${{ steps.mode.outputs.mode }}
+
+      - name: Save bot state
+        run: |
+          git config user.name "stocktrader-bot"
+          git config user.email "stocktrader-bot@users.noreply.github.com"
+          git add state/
+          if ! git diff --cached --quiet; then
+            git commit -m "update bot state" -q
+            git pull --rebase -q && git push -q
+          fi
+
+      - uses: actions/upload-pages-artifact@v3
+        if: steps.mode.outputs.build == '1'
+        with:
+          path: site
+
+  deploy:
+    needs: run
+    if: needs.run.outputs.build == '1'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v4
