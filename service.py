@@ -33,9 +33,17 @@ def clean(o):
 # ------------------------------------------------------------ งานหลัก
 def scan_data(lst="set", refresh=False):
     from scanner import scan
-    regimes, rows, *_ = scan(C.WATCHLISTS[lst], use_fund=True, refresh=refresh, capital=C.CAPITAL)
+    regimes, rows, _, bench = scan(C.WATCHLISTS[lst], use_fund=True, refresh=refresh, capital=C.CAPITAL)
+    bchart = None
+    if bench:
+        name, b = next(iter(bench.items()))
+        t = b.tail(250)
+        bchart = {"name": "SET50 (TDEX)" if name.endswith(".BK") else name,
+                  "d": [i.strftime("%Y-%m-%d") for i in t.index],
+                  "c": [round(float(x), 3) for x in t["Close"]],
+                  "sma200": [round(float(x), 3) if pd.notna(x) else None for x in t["SMA200"]]}
     return {"time": datetime.now().isoformat(timespec="minutes"), "list": lst,
-            "capital": C.CAPITAL, "regimes": regimes, "rows": rows}
+            "capital": C.CAPITAL, "regimes": regimes, "rows": rows, "bench": bchart}
 
 
 def stock_detail(t, row, df, regime=None, bt_frame=None):

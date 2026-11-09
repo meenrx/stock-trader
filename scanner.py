@@ -98,6 +98,9 @@ def scan(tickers, use_fund=True, refresh=False, capital=C.CAPITAL):
             "value20_m": round(float(r["Value20"]) / 1e6, 1),
             "analyst_upside": upside, "analyst_rec": info.get("recommendationKey"),
             "tech_detail": tdet, "fund_detail": fdet, "plan": plan,
+            "chg1": round((float(r["Close"]) / float(df["Close"].iloc[-2]) - 1) * 100, 2) if len(df) > 1 else 0,
+            "roc21": round((float(r["Close"]) / float(df["Close"].iloc[-22]) - 1) * 100, 1) if len(df) > 22 else 0,
+            "a200": bool(r["Close"] > r["SMA200"]) if pd.notna(r["SMA200"]) else False,
             "liquid": bool(liquid), "spark": [round(float(x), 2) for x in df["Close"].tail(60)],
         })
     order = {"ซื้อ": 0, "รอจังหวะ": 1, "หลีกเลี่ยง": 2}
