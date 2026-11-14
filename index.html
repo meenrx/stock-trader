@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>หุ้นเด่น</title>
+<meta name="theme-color" content="#2a78d6">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="หุ้นเด่น">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main id="app">
+  <!-- ภาพรวม (แดชบอร์ด) -->
+  <section id="v-home" class="view">
+    <header class="top">
+      <div><div class="eyebrow">ภาพรวมตลาดหุ้นไทย</div><h1 id="home-date">แดชบอร์ด</h1></div>
+      <a class="icon-btn" href="#search" aria-label="ค้นหาหุ้น" title="ค้นหาหุ้น">
+        <svg viewBox="0 0 24 24" width="20" height="20"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </a>
+    </header>
+    <div id="home-status" class="status"></div>
+    <div id="dash" class="dash"></div>
+  </section>
+
+  <!-- หุ้นเด่น -->
+  <section id="v-scan" class="view">
+    <header class="top">
+      <h1>สัญญาณหุ้น</h1>
+      <button class="icon-btn" id="scan-refresh" aria-label="อัปเดตข้อมูล" title="อัปเดตข้อมูล">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M20 11a8 8 0 1 0-2.3 5.7M20 4v7h-7"/></svg>
+      </button>
+    </header>
+    <div class="seg srv-only" id="scan-list">
+      <button data-v="set">หุ้นไทย</button><button data-v="us">หุ้นอเมริกา</button>
+    </div>
+    <div id="scan-status" class="status"></div>
+    <div id="scan-regime"></div>
+    <div class="chips" id="scan-filter"></div>
+    <input id="scan-q" class="qbox" type="search" placeholder="ค้นหาในรายการ: ชื่อย่อ หรือชื่อบริษัท" autocomplete="off">
+    <div id="scan-rows" class="list"></div>
+  </section>
+
+  <!-- ค้นหา / รายตัว -->
+  <section id="v-search" class="view">
+    <header class="top"><h1>วิเคราะห์หุ้น</h1></header>
+    <form id="search-form" class="search">
+      <input id="search-in" list="tickers" placeholder="พิมพ์ชื่อย่อ เช่น PTT, CPALL, AAPL" autocapitalize="characters" autocomplete="off">
+      <button class="btn primary">วิเคราะห์</button>
+    </form>
+    <datalist id="tickers"></datalist>
+    <div id="recent" class="chips"></div>
+    <p class="mut small">พิมพ์ชื่อย่อหุ้นไทยได้เลย (ไม่ต้องใส่ .BK)<span class="srv-only"> — หุ้นที่ไม่อยู่ในรายชื่อก็วิเคราะห์ได้ ถ้ามีข้อมูลบน Yahoo Finance</span><span class="static-only"> — เลือกได้จากรายชื่อที่ระบบติดตาม</span></p>
+  </section>
+
+  <section id="v-stock" class="view">
+    <header class="top">
+      <button class="icon-btn" onclick="history.back()" aria-label="กลับ">
+        <svg viewBox="0 0 24 24" width="22" height="22"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M15 5l-7 7 7 7"/></svg>
+      </button>
+      <h1 id="stock-title">-</h1><span></span>
+    </header>
+    <div id="stock-body"></div>
+  </section>
+
+  <!-- ข่าว -->
+  <section id="v-news" class="view">
+    <header class="top"><h1>ข่าวหุ้น</h1>
+      <button class="icon-btn" id="news-refresh" aria-label="โหลดข่าวล่าสุด"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M20 11a8 8 0 1 0-2.3 5.7M20 4v7h-7"/></svg></button>
+    </header>
+    <div id="news-status" class="status"></div>
+    <input id="news-q" class="qbox" type="search" placeholder="กรองข่าว: ชื่อย่อหุ้นหรือคำ เช่น GULF, ปันผล" autocomplete="off">
+    <div class="chips" id="news-filter"></div>
+    <div id="news-list"></div>
+  </section>
+
+  <!-- พอร์ตจำลอง -->
+  <section id="v-paper" class="view">
+    <header class="top"><h1>พอร์ตจำลอง</h1>
+      <button class="icon-btn" id="paper-refresh" aria-label="อัปเดตราคา">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M20 11a8 8 0 1 0-2.3 5.7M20 4v7h-7"/></svg>
+      </button>
+    </header>
+    <div id="paper-body"></div>
+  </section>
+
+  <!-- ทดสอบย้อนหลัง -->
+  <section id="v-bt" class="view">
+    <header class="top"><h1>ทดสอบย้อนหลัง</h1></header>
+    <div class="row-ctl">
+      <div class="seg srv-only" id="bt-list"><button data-v="set">หุ้นไทย</button><button data-v="us">หุ้นอเมริกา</button></div>
+      <select id="bt-years" class="srv-only"><option value="5">5 ปี</option><option value="10" selected>10 ปี</option><option value="15">15 ปี</option></select>
+    </div>
+    <div id="bt-status" class="status"></div>
+    <div id="bt-body"></div>
+  </section>
+
+  <!-- ตั้งค่า -->
+  <section id="v-set" class="view">
+    <header class="top"><h1>ตั้งค่า</h1></header>
+    <div id="connect"></div>
+    <form id="set-form" class="card form">
+      <h2>เงินทุนและความเสี่ยง</h2>
+      <label>เงินทุน (บาท)<input name="CAPITAL" type="number" inputmode="decimal" min="1000" step="1000"></label>
+      <label>ยอมเสียต่อไม้ (% ของพอร์ต)<input name="RISK_PER_TRADE" type="number" inputmode="decimal" min="0.1" max="5" step="0.1"></label>
+      <label>ถือหุ้นตัวเดียวไม่เกิน (% ของพอร์ต)<input name="MAX_POSITION_PCT" type="number" inputmode="decimal" min="2" max="100" step="1"></label>
+      <label>ถือพร้อมกันไม่เกิน (ตัว)<input name="MAX_POSITIONS" type="number" inputmode="numeric" min="1" max="30"></label>
+      <button class="btn primary">บันทึก</button>
+      <p class="mut small">หลังบันทึก ระบบจะคำนวณจำนวนหุ้นที่ควรซื้อใหม่ตามเงินทุนนี้</p>
+    </form>
+    <div class="card">
+      <h2>หลักการของโปรแกรม</h2>
+      <ul class="small">
+        <li><b>ซื้อเฉพาะหุ้นขาขึ้น</b> — ราคาเหนือเส้น 200 วัน และเส้น 50 วันอยู่เหนือเส้น 200 วัน</li>
+        <li><b>จังหวะซื้อ</b> — ย่อแล้วเด้งกลับเหนือ EMA20 / ทะลุไฮ 55 วันพร้อมวอลุ่ม / MACD ตัดขึ้น</li>
+        <li><b>คะแนน 100</b> — แนวโน้ม 30, โมเมนตัม 25, วอลุ่ม 10, ความผันผวน 10, พื้นฐาน 25</li>
+        <li><b>ตัดขาดทุน</b> — ราคาเข้า − 2×ATR แล้วเลื่อนขึ้นตามราคา (สูงสุด − 3×ATR)</li>
+        <li><b>ขาย</b> — ชน Stop, หลุดเส้น 200 วัน, หรือถึงเป้า 2R ขายครึ่งหนึ่ง</li>
+        <li><b>ไม่ซื้อใหม่</b> เมื่อตลาดรวมอยู่ใต้เส้น 200 วัน</li>
+      </ul>
+      <p class="warn small">ไม่ใช่คำแนะนำการลงทุน ข้อมูลจาก Yahoo Finance อาจล่าช้า ผลในอดีตไม่รับประกันอนาคต ใช้เงินที่เสียได้และตั้ง Stop ทุกครั้ง</p>
+    </div>
+  </section>
+</main>
+
+<nav class="tabs" id="tabs">
+  <div class="brand"><img src="icon-192.png" alt=""><div>หุ้นเด่น<small>ระบบช่วยเทรดหุ้นไทย</small></div></div>
+  <a href="#home" data-tab="home"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg><span>ภาพรวม</span></a>
+  <a href="#scan" data-tab="scan"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></svg><span>สัญญาณ</span></a>
+  <a href="#news" data-tab="news"><svg viewBox="0 0 24 24"><path d="M4 5h13v14H6a2 2 0 0 1-2-2zM17 9h3v8a2 2 0 0 1-2 2M7 9h7M7 13h7M7 17h4"/></svg><span>ข่าว</span></a>
+  <a href="#paper" data-tab="paper"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="14" rx="2"/><path d="M8 6V4h8v2M3 12h18"/></svg><span>พอร์ต</span></a>
+  <a href="#bt" data-tab="bt"><svg viewBox="0 0 24 24"><path d="M4 4v16h16M8 14l3-3 3 2 5-6"/></svg><span>ย้อนหลัง</span></a>
+  <a href="#set" data-tab="set"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg><span>ตั้งค่า</span></a>
+</nav>
+<div id="toast" role="status"></div>
+<script src="static.js"></script><script src="app.js"></script>
+</body>
+</html>
